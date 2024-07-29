@@ -6,11 +6,17 @@ import Login from "../page/Login.jsx";
 import Register from "../page/Register.jsx";
 import Adminlayout from "../Components/Layout/AdminLayout.jsx/Adminlayout.jsx";
 import Addservices from "../page/Addservices.jsx";
+import Home from "../page/Home.jsx";
+
   const routes = createBrowserRouter([
     {
       path: "/",
       element:<App/>,
       children:[
+        {
+          index: true,
+         element: <Home></Home>,
+        },
         {
      path:'about',
      element:<About></About>

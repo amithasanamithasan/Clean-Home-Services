@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className='w-full max-w-[1000px] mx-auto'>
+      
+        <div className='w-full max-w-[1200px] px-[25px] mx-auto'>
         <div className="flex-none lg:hidden">
           <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
             <svg
@@ -19,7 +20,7 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <div className="mx-2 flex-1 px-2">Navbar Title</div>
+        <div className="flex-1 ">Navbar Title</div>
         <div className="hidden flex-none lg:block">
           <div className=" flex gap-3 ">
             {/* Navbar menu content here */}
