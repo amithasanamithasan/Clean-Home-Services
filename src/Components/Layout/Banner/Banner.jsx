@@ -6,19 +6,19 @@ import img5 from"../../../assets/images/benefits.jpg"
 
 const Banner = () => {
     return (
-        <div className="carousel w-full h-[600px]   ">
-        <div id="slide1" className="carousel-item relative w-full  ">
+        <div className="carousel w-full h-[600px] object-cover    ">
+        <div id="slide1" className="carousel-item relative w-full  object-cover ">
           <img src={img1} className="w-full rounded-xl  " />
           <div className="absolute  rounded-xl flex items-center left-0 
-          top-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgb(21,21,21,0)] ">
+          top-0 bottom-0 bg-gradient-to-r from-[#55b4cb] to-[rgb(21,21,21,0)] ">
      
-     <div className='  space-y-7 text-white pl-12 w-1/2  font-bold '>
-        <h1 className='text-6xl text-green-400'> Affordable Price For Deep Cleaning  Servicing</h1>
-        <p className=' font-bold  text-green-200'>There are many variations of passages of available, 
+     <div className='  space-y-7 text-white  w-1/2  font-bold '>
+        <h1 className='text-5xl  text-green-600'> Affordable Price For Deep Cleaning  Servicing</h1>
+        <p className=' font-bold  text-green-100 '>There are many variations of passages of available, 
             but the majority have suffered alteration in some form </p>
-<div className='p-8 flex'>
-<button className="btn btn-active btn-secondary mr-4">Discover More</button>
-<button className="btn btn-outline btn-warning">Latest Project</button>
+<div className=' py-10  flex'>
+<button className="btn btn-active btn-success mr-4">Discover More</button>
+<button className="btn btn-outline btn-warning">Read More</button>
 </div>
      </div>
             
