@@ -1,13 +1,14 @@
-import img1  from"../../../assets/images/professional-services.jpg"
-import img2 from"../../../assets/images/banner.jpg"
-import img3 from"../../../assets/images/benefits.jpg"
-import img4  from"../../../assets/images/professional-services.jpg"
-import img5 from"../../../assets/images/benefits.jpg"
 
+
+import img1  from"../../../assets/images/professional-services.jpg"
+ import img2 from"../../../assets/images/banner.jpg"
+import img3 from"../../../assets/images/benefits.jpg"
+ import img4  from"../../../assets/images/professional-services.jpg"
+ import img5  from"../../../assets/images/home-deep.webp"
 const Banner = () => {
     return (
         <div className="carousel w-full h-[600px] object-cover    ">
-        <div id="slide1" className="carousel-item relative w-full  object-cover ">
+ <div id="slide1" className="carousel-item relative w-full  object-cover ">
           <img src={img1} className="w-full rounded-xl  " />
           <div className="absolute  rounded-xl flex items-center left-0 
           top-0 bottom-0 bg-gradient-to-r from-[#55b4cb] to-[rgb(21,21,21,0)] ">
@@ -58,7 +59,7 @@ const Banner = () => {
             <a href="#slide3" className="btn btn-circle mr-5">❮</a> 
             <a href="#slide1" className="btn btn-circle">❯</a>
           </div>
-        </div>
+        </div>   
       </div>
     );
 };

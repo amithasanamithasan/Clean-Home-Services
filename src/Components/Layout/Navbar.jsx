@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
-
-
+// import logo from "../../assets/images/logo2.jpg"
+import { IoHomeOutline } from "react-icons/io5";
+import { FaBookOpen } from "react-icons/fa6";
+import { IoIosContact } from "react-icons/io";
+import { IoMdLogIn } from "react-icons/io";
+import { FaRegRegistered } from "react-icons/fa6";
 const Navbar = () => {
     return (
       
-        <div className='w-full max-w-[1200px] px-[25px] mx-auto'>
+        <div className='w-full h-[60px] max-w-[1340px] px-[25px] mx-autonavbar fixed z-10 bg-opacity-40 bg-green-600 mx-auto '>
         <div className="flex-none lg:hidden">
           <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
             <svg
@@ -20,14 +24,28 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <div className="flex-1 ">Navbar Title</div>
+        <div className="flex-1 ">
+          {/* <img src={logo} alt="logo"  className=" md:w-[70px] rounded-xl  relative " /> */}
+          <h1>DEEP HOME CLEANE SERVICE</h1>
+        </div>
         <div className="hidden flex-none lg:block">
           <div className=" flex gap-3 ">
             {/* Navbar menu content here */}
-           <NavLink to="/about"  className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>About</NavLink>
-           <NavLink to="/contact"className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>Contact</NavLink>
-           <NavLink to="/login"className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>Login</NavLink>
-           <NavLink to="/register"className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>Register</NavLink>
+            <NavLink to="/"  
+           className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm outline"}>
+           <IoHomeOutline ></IoHomeOutline> Home </NavLink>
+           <NavLink to="/about"  
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+          <FaBookOpen></FaBookOpen>  About</NavLink>
+           <NavLink to="/contact"
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+          <IoIosContact></IoIosContact>  Contact</NavLink>
+           <NavLink to="/login"
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+        <IoMdLogIn></IoMdLogIn>    Login</NavLink>
+           <NavLink to="/register"
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+          <FaRegRegistered></FaRegRegistered>  Register</NavLink>
           </div>
         </div>
         </div>

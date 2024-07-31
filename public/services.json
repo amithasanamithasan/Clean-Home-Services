@@ -1,0 +1,93 @@
+[
+    {
+      "id": "1",
+      "image": "https://example.com/images/standard-cleaning.jpg",
+      "title": "Standard Cleaning",
+      "category": "Home Cleaning",
+      "description": "A comprehensive cleaning service for your entire home, including dusting, vacuuming, and mopping.",
+      "price": 100.0,
+      "status": "Available"
+    },
+    {
+      "id": "2",
+      "image": "https://example.com/images/deep-cleaning.jpg",
+      "title": "Deep Cleaning",
+      "category": "Home Cleaning",
+      "description": "An intensive cleaning service that covers all areas of your home, including hard-to-reach spots and detailed cleaning.",
+      "price": 150.0,
+      "status": "Available"
+    },
+    {
+      "id": "3",
+      "image": "https://example.com/images/move-out-cleaning.jpg",
+      "title": "Move-Out Cleaning",
+      "category": "Home Cleaning",
+      "description": "A thorough cleaning service to prepare your home for new occupants, including cleaning all appliances and fixtures.",
+      "price": 200.0,
+      "status": "Available"
+    },
+    {
+      "id": "4",
+      "image": "https://example.com/images/carpet-cleaning.jpg",
+      "title": "Carpet Cleaning",
+      "category": "Specialized Cleaning",
+      "description": "Professional carpet cleaning service to remove stains, dirt, and allergens from your carpets.",
+      "price": 80.0,
+      "status": "Unavailable"
+    },
+    {
+      "id": "5",
+      "image": "https://example.com/images/window-cleaning.jpg",
+      "title": "Window Cleaning",
+      "category": "Specialized Cleaning",
+      "description": "Expert window cleaning service to leave your windows spotless and streak-free, both inside and out.",
+      "price": 120.0,
+      "status": "Available"
+    },
+    {
+      "id": "6",
+      "image": "https://example.com/images/oven-cleaning.jpg",
+      "title": "Oven Cleaning",
+      "category": "Kitchen Cleaning",
+      "description": "Deep cleaning service for ovens, including removing grease and grime from racks and surfaces.",
+      "price": 70.0,
+      "status": "Available"
+    },
+    {
+      "id": "7",
+      "image": "https://example.com/images/bathroom-cleaning.jpg",
+      "title": "Bathroom Cleaning",
+      "category": "Bathroom Cleaning",
+      "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
+      "price": 90.0,
+      "status": "Available"
+    },
+    {
+      "id": "8",
+      "image": "https://example.com/images/upholstery-cleaning.jpg",
+      "title": "Upholstery Cleaning",
+      "category": "Specialized Cleaning",
+      "description": "Professional cleaning for upholstered furniture, removing dirt, stains, and allergens.",
+      "price": 110.0,
+      "status": "Unavailable"
+    },
+    {
+      "id": "9",
+      "image": "https://example.com/images/post-renovation-cleaning.jpg",
+      "title": "Post-Renovation Cleaning",
+      "category": "Home Cleaning",
+      "description": "Comprehensive cleaning service after renovations, removing dust and debris from all areas.",
+      "price": 250.0,
+      "status": "Available"
+    },
+    {
+      "id": "10",
+      "image": "https://example.com/images/seasonal-cleaning.jpg",
+      "title": "Seasonal Cleaning",
+      "category": "Home Cleaning",
+      "description": "Seasonal cleaning service to refresh your home, including deep cleaning and organizing.",
+      "price": 130.0,
+      "status": "Available"
+    }
+  ]
+  
