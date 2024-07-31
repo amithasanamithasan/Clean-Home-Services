@@ -1,5 +1,7 @@
 import about1 from"../assets/images/images about.jpg"
 import about2 from"../assets/images/images about1.jpeg"
+import ContactLogo from "../utils/ContactLogo";
+
 
 const About = () => {
     return (
@@ -20,7 +22,12 @@ const About = () => {
              <p className="p-2 font-serif">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,
                  or randomised words which donot look even slightly believable..</p>
             <p className=" p-2  font-serif">the majority have suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable.</p>
-            <button className="btn bg-[#19d056]  ">Get More Info</button>
+            <div className="flex[1]">
+            <button className="btn bg-[#19d056]  ">Contact Us</button>
+            <ContactLogo></ContactLogo>
+            </div>
+           
+  
           </div>
         </div>
       </div>

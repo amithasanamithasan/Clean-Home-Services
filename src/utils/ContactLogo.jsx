@@ -20,8 +20,8 @@ const ContactLogo = () => {
                       data-original="#000000"
                     />
                   </svg>
-                  <a href="amit-35-1773@diu.edu.bd" className="text-white flex text-sm ml-3">
-                    <MdOutlineMailOutline className="text-4xl text-white " ></MdOutlineMailOutline><strong className="text-2xl">amit-35-1773@diu.edu.bd</strong>
+                  <a href="amit-35-1773@diu.edu.bd" className="text-black  flex text-sm ml-3">
+                    <MdOutlineMailOutline className="text-4xl text-black  " ></MdOutlineMailOutline><strong className="text-2xl">amit-35-1773@diu.edu.bd</strong>
                   </a>
                 </li>
                 <li className="flex items-center">
@@ -37,8 +37,8 @@ const ContactLogo = () => {
                         
                       
                     </svg>
-                    <a href="tel:+0088 01797522144" className="text-white flex text-sm ml-3">
-                    <FaPhone className="text-3xl text-white "></ FaPhone >  <strong className="text-2xl">+01797522144</strong> 
+                    <a href="tel:+0088 01797522144" className="text-black  flex text-sm ml-3">
+                    <FaPhone className="text-3xl text-black  "></ FaPhone >  <strong className="text-2xl">+01797522144</strong> 
                     </a>
                   </li>
                   <li className="flex items-center">
@@ -59,10 +59,10 @@ const ContactLogo = () => {
                       />
                     </svg>
                     <a
-                      href="https://www.google.com/maps/dir//123+Main+St,+City,+Country"
-                     className="text-white flex text-sm ml-3"
+                      href="https://maps.google.com/maps?q=Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                     className="text-black flex text-sm ml-3"
                     >
-                    <FaLocationDot className="text-3xl text-white "></FaLocationDot>  <strong className="text-2xl"> Country Bangladesh </strong>
+                    <FaLocationDot className="text-3xl text-black "></FaLocationDot>  <strong className="text-2xl"> Country Bangladesh </strong>
                     </a>
                   </li>
                 </div> 

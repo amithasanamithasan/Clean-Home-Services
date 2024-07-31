@@ -7,15 +7,17 @@ import PopulerServices from "../Components/PopulerServices/PopulerServices.jsx";
 
 const Home = () => {
     return (
-    <div>
+<div>
       <Banner></Banner>
-     <Container> </Container>
-  <div>
+  <Container> </Container>
   <Teamservices></Teamservices>
-  <PopulerServices></PopulerServices>
+ <PopulerServices></PopulerServices>
   
 </div>
-</div>
+
+  
+
+
 
     );
 };
