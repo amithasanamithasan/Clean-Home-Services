@@ -7,12 +7,12 @@ const Register = () => {
     return (
         <>
         <Helmet>
-               <title>HOME SERVICES CLEAN|Sign_Up</title>
-           </Helmet>
-       <div className="hero min-h-screen bg-base-200">
+            <title>HOME SERVICES CLEAN|Sign_Up</title>
+        </Helmet>
+       <div className="hero h-[600px] w-[900px]bg-base-200">
        <div className="hero-content flex-col lg:flex-row-reverse">
          <div className="text-center lg:text-left">
-           <h1 className="text-5xl font-bold">Sign_Up now!</h1>
+           <h1 className="text-4xl text-center  font-bold">Sign_Up now!</h1>
          <Lottie animationData={ login} loop={true}></Lottie>
          </div>
          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
