@@ -23,9 +23,9 @@ const PopulerHomeservice = data.filter(item=>item.category ==='Popular');
     servicesdata.map(service=>
     <PopularServiceItemCard key={service._id} service={service}>
     </PopularServiceItemCard>)
-}        
+}       
 </div>
-      </section>
+</section>
       
  
      

@@ -5,7 +5,7 @@
       "title": "Standard Cleaning",
       "category": "Popular",
       "description": "A comprehensive cleaning service for your entire home, including dusting, vacuuming, and mopping.",
-      "price": 100.0,
+      "price": 3000.0,
       "status": "Available"
     },
     {
@@ -14,7 +14,7 @@
       "title": "Deep Cleaning",
       "category": "Popular",
       "description": "An intensive cleaning service that covers all areas of your home, including hard-to-reach spots and detailed cleaning.",
-      "price": 150.0,
+      "price": 1500.0,
       "status": "Available"
     },
     {
@@ -23,7 +23,7 @@
       "title": "Move-Out Cleaning",
       "category": "Popular",
       "description": "A thorough cleaning service to prepare your home for new occupants, including cleaning all appliances and fixtures.",
-      "price": 200.0,
+      "price": 3000.0,
       "status": "Available"
     },
     {
@@ -32,7 +32,7 @@
       "title": "Carpet Cleaning",
       "category": "Popular",
       "description": "Professional carpet cleaning service to remove stains, dirt, and allergens from your carpets.",
-      "price": 80.0,
+      "price": 2000.0,
       "status": "Unavailable"
     },
     {
@@ -41,7 +41,7 @@
       "title": "Window Cleaning",
       "category": "Popular",
       "description": "Expert window cleaning service to leave your windows spotless and streak-free, both inside and out.",
-      "price": 120.0,
+      "price": 2000.0,
       "status": "Available"
     },
     {
@@ -50,7 +50,7 @@
       "title": "kitchen cleaning",
       "category": "Popular",
       "description": "removing dirt from food preparation surfaces in the kitchen. Surfaces can be counters, cutting boards, dishes, knives, utensils, pots and pans.",
-      "price": 170.0,
+      "price": 2000.0,
       "status": "Available"
     },
     {
@@ -59,7 +59,7 @@
       "title": "Bathroom Cleaning",
       "category": "Popular",
       "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
-      "price": 90.0,
+      "price": 1000.0,
       "status": "Available"
     },
     {
@@ -68,7 +68,7 @@
       "title": "Upholstery Cleaning",
       "category": "Popular",
       "description": "Professional cleaning for upholstered furniture, removing dirt, stains, and allergens.",
-      "price": 110.0,
+      "price": 1000.0,
       "status": "Unavailable"
     },
     {
@@ -77,7 +77,7 @@
       "title": "Post-Renovation Cleaning",
       "category": "Popular",
       "description": "Comprehensive cleaning service after renovations, removing dust and debris from all areas.",
-      "price": 250.0,
+      "price": 500.0,
       "status": "Available"
     },
     {
@@ -86,7 +86,7 @@
       "title": "Seasonal Cleaning",
       "category": "Popular",
       "description": "Seasonal cleaning service to refresh your home, including deep cleaning and organizing.",
-      "price": 1000.0,
+      "price": 1800.0,
       "status": "Available"
     },
     {
@@ -95,7 +95,16 @@
       "title": "Bed Bugs Cleaning Home",
       "category": "Popular",
       "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
-      "price": 200.0,
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "12",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Clean Water Tank",
+      "category": "Popular",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 3000.0,
       "status": "Available"
     }
   ]
