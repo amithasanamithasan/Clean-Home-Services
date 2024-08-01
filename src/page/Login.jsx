@@ -1,4 +1,6 @@
-
+import Lottie from "lottie-react";
+import signIn from"../../Animation - 1721163735130.json";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -6,10 +8,7 @@ const Login = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p>
+            <Lottie  className="h-[400px]" animationData={ signIn} loop={true}></Lottie>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form className="card-body">
@@ -32,6 +31,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <p className="text-center font-bold "> <Link to='/register' ><span className="text-green-400 hover:text-red-500">You Donot Rgister Please!</span> <small className="underline  text-green-500 uppercase">Got to SignIn</small></Link></p>
           </div>
         </div>
       </div>

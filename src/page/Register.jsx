@@ -9,11 +9,11 @@ const Register = () => {
         <Helmet>
             <title>HOME SERVICES CLEAN|Sign_Up</title>
         </Helmet>
-       <div className="hero h-[600px] w-[900px]bg-base-200">
+       <div className="hero h-[500px] w-[500px]bg-base-200">
        <div className="hero-content flex-col lg:flex-row-reverse">
          <div className="text-center lg:text-left">
            <h1 className="text-4xl text-center  font-bold">Sign_Up now!</h1>
-         <Lottie animationData={ login} loop={true}></Lottie>
+         <Lottie   className="h-[400px]" animationData={ login} loop={true}></Lottie>
          </div>
          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
            <form onSubmit=""  className="card-body">
@@ -58,7 +58,7 @@ const Register = () => {
              <div className="divider divider-success">OR</div>
            
            </form>
-           <p className="text-center text-green-500 font-bold text-2xl"> <small> Already register<Link to='/login' className="underline"> Got to Log_In</Link></small></p>
+           <p className="text-center text-green-500 font-bold text-2xl p-5"> <small> Already register<Link to='/login' className="underline  uppercase"> Got to Log_In</Link></small></p>
          </div>
        </div>
      </div> 
