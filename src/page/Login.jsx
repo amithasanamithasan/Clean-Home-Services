@@ -1,9 +1,14 @@
 import Lottie from "lottie-react";
 import signIn from"../../Animation - 1721163735130.json";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     return (
+      <>
+      <Helmet>
+      <title>HOME SERVICE CLEAN|Login</title>
+  </Helmet>
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
@@ -35,6 +40,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      </>
     );
 };
 

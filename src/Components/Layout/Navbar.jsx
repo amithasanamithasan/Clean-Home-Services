@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-// import logo from "../../assets/images/logo2.jpg"
+ import logo from "../../assets/images/logo2.jpg"
 import { IoHomeOutline } from "react-icons/io5";
 import { FaBookOpen } from "react-icons/fa6";
 import { IoIosContact } from "react-icons/io";
@@ -25,8 +25,8 @@ const Navbar = () => {
           </label>
         </div>
         <div className="flex-1 ">
-          {/* <img src={logo} alt="logo"  className=" md:w-[70px] rounded-xl  relative " /> */}
-          <h1>DEEP HOME CLEANE SERVICE</h1>
+          <img src={logo} alt="logo"  className="w-[60px] h-[50px] rounded-xl  relative " /> 
+      
         </div>
         <div className="hidden flex-none lg:block">
           <div className=" flex gap-3 ">

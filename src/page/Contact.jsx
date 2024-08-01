@@ -2,10 +2,15 @@ import logo1 from"../assets/images/logo1.png"
 
 import IframeG from "../utils/IframeG";
 import ContactLogo from "../utils/ContactLogo";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
     return (
-        <div className="w-full">
+          <>   
+            <Helmet>
+      <title>HOME SERVICE CLEAN|ContactUs</title>
+  </Helmet>
+      <div className="w-full">
         <div className="bg-[#3057ad] lg:max-w-full rounded-lg mx-auto px-4">
           <div className="grid md:grid-cols-2 items-center gap-8 sm:p-10 p-4 font-sans">
             <div>
@@ -36,13 +41,13 @@ const Contact = () => {
             name="Name"
             id="Name"
             className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-2"
-          />
+            />
         </div>
         <div>
           <label
             htmlFor="Location"
             className="block text-sm font-medium text-gray-700"
-          >
+            >
             LOCATION*
           </label>
           <input
@@ -50,13 +55,13 @@ const Contact = () => {
             name="location"
             id="location"
             className="mt-1 block w-full border input-bordered input-accent rounded-md shadow-sm p-2"
-          />
+            />
         </div>
         <div>
           <label
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
-          >
+            >
             EMAIL*
           </label>
           <input
@@ -64,13 +69,13 @@ const Contact = () => {
             name="email"
             id="email"
             className="mt-1 block w-full border input-bordered input-warning rounded-md shadow-sm p-2"
-          />
+            />
         </div>
         <div>
           <label
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700"
-          >
+            >
             PHONE*
           </label>
           <input
@@ -78,14 +83,14 @@ const Contact = () => {
             name="phone"
             id="phone"
             className="mt-1 block w-full border input-bordered input-secondary rounded-md shadow-sm p-2"
-          />
+            />
         </div>
       </div>
       <div className="mt-4">
         <label
           htmlFor="message"
           className="block text-sm font-medium text-gray-700"
-        >
+          >
           Message*
         </label>
         <textarea
@@ -93,13 +98,13 @@ const Contact = () => {
           name="text"
           rows="4"
           className="mt-1 block w-full border input-bordered input-primary rounded-md shadow-sm p-2"
-        ></textarea>
+          ></textarea>
       </div>
       <div className="mt-6 text-right">
         <button
           type="submit"
           className="bg-[#2e0249] text-white py-2 px-4 rounded-md hover:bg-[#1e0133]"
-        >
+          >
           Send Message
         </button>
       </div>
@@ -109,6 +114,7 @@ const Contact = () => {
           </div>
    <IframeG></IframeG>
         </div>
+          </>
     );
 };
 

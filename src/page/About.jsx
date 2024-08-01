@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import about1 from"../assets/images/images about.jpg"
 import about2 from"../assets/images/images about1.jpeg"
 import ContactLogo from "../utils/ContactLogo";
@@ -5,6 +6,10 @@ import ContactLogo from "../utils/ContactLogo";
 
 const About = () => {
     return (
+    <>
+       <Helmet>
+      <title>HOME SERVICE CLEAN|About</title>
+  </Helmet>
         <div className="hero min-h-screen bg-green-200 ">
         <div className="hero-content flex-col lg:flex-row ">
             <div className='lg:w-1/2 md:w-1/2 relative h-600   rounded-md  mr-10  '>
@@ -31,6 +36,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      </>
         
     );
 };
