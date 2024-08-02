@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
- import logo from "../../assets/images/logo2.jpg"
+import logo from "../../assets/images/logo2.jpg"
 import { IoHomeOutline } from "react-icons/io5";
 import { FaBookOpen } from "react-icons/fa6";
 import { IoIosContact } from "react-icons/io";
 import { IoMdLogIn } from "react-icons/io";
 import { FaRegRegistered } from "react-icons/fa6";
+
 const Navbar = () => {
     return (
       

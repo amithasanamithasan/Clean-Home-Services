@@ -2,7 +2,7 @@ import img from"../assets/images/shutterstock.jpeg"
 
 const Container = () => {
     return (
-        <div className="w-full max-w[1300px] px-[25px] mx-auto "> 
+        <div className="w-full max-w-[1300px] px-4 sm:px-6 lg:px-8 mx-auto "> 
           <div className="flex my-10 gap-10">
             <div className="flex-[1] flex flex-col justify-between gap-10">
             <h1 className="text-4xl text-[#1f2020] font-bold font-serif">{' '}Quality Cleaning <br/>{' '}<span className="text-primary"> For Your Home </span></h1>
