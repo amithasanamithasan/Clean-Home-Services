@@ -106,6 +106,351 @@
       "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
       "price": 3000.0,
       "status": "Available"
+    },
+
+
+    {
+      "_id": "13",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Carpets Cleaning  Home",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "14",
+      "image": "https://example.com/image2.jpg",
+      "title": "Deep Cleanig",
+      "category": "Comprehensive Cleaning",
+      "description": "Includes thorough cleaning of all rooms, windows, and appliances.",
+      "price": 150,
+      "status": "available"
+    },
+    {
+      "_id": "15",
+      "image": "https://example.com/image3.jpg",
+      "title": "Window Cleaning for House",
+      "category": "WindowCleaning",
+      "description": "Includes cleaning of interior and exterior windows.",
+      "price": 1000,
+      "status": "available"
+    },
+    {
+      "-id": "16",
+      "image": "https://example.com/image4.jpg",
+      "title": "Carpet Cleaning for one House ",
+      "category": "CarpetCleaning",
+      "description": "Includes steam cleaning of carpets and rugs.",
+      "price": 1000,
+      "status": "available"
+    },
+    {
+      "_id":"17",
+      "image": "https://example.com/image5.jpg",
+      "title": "Appliance Cleaning",
+      "category": "Specialized Cleaning",
+      "description": "Includes cleaning of refrigerators, ovens, and other appliances.",
+      "price": 4000,
+      "status": "available"
+    },
+    {
+      "_id": "18",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Cleaning Home",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 5000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "19",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Cleaning bed Home",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 1000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "20",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Cleaning Sofa Home",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 1000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "21",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Clothes Cleaning All",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "22",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Carpets Cleaning  Home",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 3000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "23",
+      "image": "https://i.ibb.co/GJ1H9DJ/Bed-Bugs-Cleaning-home-2.jpg",
+      "title": "Bed Bugs Car Cleaning",
+      "category": "BedBugs",
+      "description": "Use a vacuum cleaner with a brush attachment to clean mattresses, box springs, and bed frames. Vacuum floors, baseboards, and molding daily. Empty the vacuum bag outside in a sealed plastic bag and throw it away.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "24",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Clean Water Tank",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 3000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "25",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Clean Mini WaterTank House",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 1500.0,
+      "status": "Available"
+    },
+    {
+      "_id": "26",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Clean Reserve WaterTank 60000 liters House",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 3000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "27",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Clean Reserve WaterTank 100000 House",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 5000.0,
+      "status": "Available"
+    }, 
+    {
+      "_id": "28",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Houseapartments Water Storage for Firefighting ",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 10000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "29",
+      "image": "https://i.ibb.co/XkbKRPt/water-tank-cleaning-service.jpg",
+      "title": "Office Water Tank 10000 liter ",
+      "category": "WaterTank",
+      "description": "It will keep  your water tasting fresh and clean It will reduce the amount of bacteria that grows in your tank.It will keep your tank functioning at its peak performanceIt helps reduce operating costs. Not only does regular cleaning of your water tank reduce the amount of work you have to do, but it also keeps it running smoothly and prevents unnecessary wear and tear on its components It makes sense from a practical standpoint as well. By keeping your water tank clean and free of debris, you are ensuring that it will last longer and provide better-quality drinking water.",
+      "price": 3000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "30",
+      "image": "https://i.ibb.co/FbcsN7d/Window-Cleaning-2.jpg",
+      "title": "Home Windows Cleaning Apartment",
+      "category": "WindowCleaning",
+      "description": "Expert window cleaning service to leave your windows spotless and streak-free, both inside and out.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "31",
+      "image": "https://i.ibb.co/FbcsN7d/Window-Cleaning-2.jpg",
+      "title": "Office Windows Cleaning Apartment",
+      "category": "WindowCleaning",
+      "description": "Expert window cleaning service to leave your windows spotless and streak-free, both inside and out.",
+      "price": 5000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "32",
+      "image": "https://i.ibb.co/FbcsN7d/Window-Cleaning-2.jpg",
+      "title": "10 Cars Window Cleaning ",
+      "category": "WindowCleaning",
+      "description": "Expert window cleaning service to leave your windows spotless and streak-free, both inside and out.",
+      "price": 1200.0,
+      "status": "Available"
+    },
+    {
+      "_id": "33",
+      "image": "https://i.ibb.co/0tddJL8/Carpet-Cleaning-2.jpg",
+      "title": "Carpet Cleaning House",
+      "category": "CarpetClean",
+      "description": "Professional carpet cleaning service to remove stains, dirt, and allergens from your carpets.",
+      "price": 2000.0,
+      "status": "Unavailable"
+    },
+    {
+      "_id": "34",
+      "image": "https://i.ibb.co/0tddJL8/Carpet-Cleaning-2.jpg",
+      "title": "Carpet Cleaning House for outdoor",
+      "category": "CarpetClean",
+      "description": "Professional carpet cleaning service to remove stains, dirt, and allergens from your carpets.",
+      "price": 3000.0,
+      "status": "Unavailable"
+    },
+    {
+      "_id": "35",
+      "image": "https://i.ibb.co/0tddJL8/Carpet-Cleaning-2.jpg",
+      "title": "Mini Carpet Cleaning House ",
+      "category": "CarpetClean",
+      "description": "Professional carpet cleaning service to remove stains, dirt, and allergens from your carpets.",
+      "price": 1000.0,
+      "status": "Unavailable"
+    },
+    {
+      "_id":"36",
+      "image": "https://i.ibb.co/w0p5778/kichen-2.jpg",
+      "title": "kitchencleaning for refrigeratorfreezer ",
+      "category": "kitchencleaning",
+      "description": "Includes cleaning of refrigerators ,and other appliances.",
+      "price": 2000,
+      "status": "available"
+    },
+    {
+      "_id":"37",
+      "image": "https://i.ibb.co/w0p5778/kichen-2.jpg",
+      "title": "kitchen cleaning for House Oven",
+      "category": "kitchencleaning",
+      "description": "Includes cleaning of Ovens",
+      "price": 1000,
+      "status": "available"
+    },
+    {
+      "_id": "38",
+      "image": "https://i.ibb.co/w0p5778/kichen-2.jpg",
+      "title": "kitchecleaning For all appliances",
+      "category": "kitchencleaning",
+      "description": "removing dirt from food preparation surfaces in the kitchen. Surfaces can be counters, cutting boards, dishes, knives, utensils, pots and pans.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "39",
+      "image": "https://i.ibb.co/yNPV4zM/Bathroom-Cleaning-2.jpg",
+      "title": "Bathroom Cleaning For one",
+      "category": "BathroomCleaning",
+      "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
+      "price": 1000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "40",
+      "image": "https://i.ibb.co/yNPV4zM/Bathroom-Cleaning-2.jpg",
+      "title": "Bathroom Cleaning For Two",
+      "category": "BathroomCleaning",
+      "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
+      "price": 1500.0,
+      "status": "Available"
+    },
+    {
+      "_id": "41",
+      "image": "https://i.ibb.co/yNPV4zM/Bathroom-Cleaning-2.jpg",
+      "title": "Home Bathroom Cleaning For All",
+      "category": "BathroomCleaning",
+      "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "42",
+      "image": "https://i.ibb.co/yNPV4zM/Bathroom-Cleaning-2.jpg",
+      "title": "Office Bathroom Cleaning For All",
+      "category": "BathroomCleaning",
+      "description": "Detailed cleaning service for bathrooms, including scrubbing tiles, cleaning mirrors, and sanitizing surfaces.",
+      "price": 4000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "43",
+      "image": "https://i.ibb.co/NYyTqRM/Upholstery-Cleaning-2.jpg",
+      "title": "Upholstery Cleaning House Furniture",
+      "category": "UpholsteryCleaning",
+      "description": "Professional cleaning for upholstered furniture,  stains, and allergens.",
+      "price": 1000.0,
+      "status": "available"
+    },
+    {
+      "_id": "44",
+      "image": "https://i.ibb.co/NYyTqRM/Upholstery-Cleaning-2.jpg",
+      "title": "Upholstery Cleaning Sofaset Removing Dirt House ",
+      "category": "UpholsteryCleaning",
+      "description": "Professional cleaning for  removing dirt, stains, and allergens.",
+      "price": 1000.0,
+      "status": "available"
+    },
+    {
+      "_id": "45",
+      "image": "https://i.ibb.co/NYyTqRM/Upholstery-Cleaning-2.jpg",
+      "title": "Upholstery Cleaning Bed Room Set ",
+      "category": "UpholsteryCleaning",
+      "description": "Professional cleaning for removing dirt,stains, and allergens.",
+      "price": 2000.0,
+      "status": "available"
+    },
+    {
+      "_id": "46",
+      "image": "https://i.ibb.co/tMTpvdS/Post-Renovation-Cleaning-2.jpg",
+      "title": "Post-Renovation Cleaning 2Clesners 5Hours",
+      "category": "PostRenovation",
+      "description": "Comprehensive cleaning service 801-1000sqft after renovations, removing dust and debris from all areas.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "47",
+      "image": "https://i.ibb.co/tMTpvdS/Post-Renovation-Cleaning-2.jpg",
+      "title": "Post-Renovation Cleaning 3Clesners 4Hours",
+      "category": "PostRenovation",
+      "description": "Comprehensive cleaning service 1401-1600sqft after renovations, removing dust and debris from all areas.",
+      "price": 6000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "48",
+      "image": "https://i.ibb.co/tMTpvdS/Post-Renovation-Cleaning-2.jpg",
+      "title": "Post-Renovation Cleaning 1Clesners 8Hours",
+      "category": "PostRenovation",
+      "description": "Comprehensive cleaning service 500-1000sqft after renovations, removing dust and debris from all areas.",
+      "price": 2000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "9",
+      "image": "https://i.ibb.co/tMTpvdS/Post-Renovation-Cleaning-2.jpg",
+      "title": "Post-Renovation Cleaning 4Clesners 8Hours",
+      "category": "PostRenovation",
+      "description": "Comprehensive cleaning service 2001-2500sqft after renovations, removing dust and debris from all areas.",
+      "price": 8000.0,
+      "status": "Available"
+    },
+    {
+      "_id": "50",
+      "image": "https://i.ibb.co/tMTpvdS/Post-Renovation-Cleaning-2.jpg",
+      "title": "Post-Renovation Cleaning 2Clesners 3Hours",
+      "category": "PostRenovation",
+      "description": "Comprehensive cleaning service 2001-2500sqft after renovations, removing dust and debris from all areas.",
+      "price": 1000.0,
+      "status": "Available"
     }
+
   ]
   
