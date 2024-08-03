@@ -5,6 +5,7 @@ import { FaBookOpen } from "react-icons/fa6";
 import { IoIosContact } from "react-icons/io";
 import { IoMdLogIn } from "react-icons/io";
 import { FaRegRegistered } from "react-icons/fa6";
+import { MdCleaningServices } from "react-icons/md";
 
 const Navbar = () => {
     return (
@@ -34,7 +35,10 @@ const Navbar = () => {
             {/* Navbar menu content here */}
             <NavLink to="/"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm outline"}>
-           <IoHomeOutline ></IoHomeOutline> Home </NavLink>
+            <IoHomeOutline></IoHomeOutline> Home </NavLink>
+           <NavLink to="/menu"  
+           className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
+          <MdCleaningServices></MdCleaningServices>  Our Menu Services </NavLink>
            <NavLink to="/about"  
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <FaBookOpen></FaBookOpen>  About</NavLink>
