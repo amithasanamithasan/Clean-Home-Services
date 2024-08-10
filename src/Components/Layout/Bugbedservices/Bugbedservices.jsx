@@ -11,9 +11,9 @@ const Bugbedservices = () => {
 
     return (
               <section>
-            <Cover img={bugimg} title="BedBugs Services"></Cover>
+         <Cover img={bugimg} title="BedBugs Services"></Cover>
         <SectionTitle subHeading="Our Avilable Services"
-        heading="HOME CLEANING SERVICES">
+        heading="HOME CLEANING SERVICES" >
 
         </SectionTitle>
 <h1 className="text-3xl font-extrabold text-emerald-600 text-center uppercase "></h1>

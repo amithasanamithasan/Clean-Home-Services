@@ -6,9 +6,11 @@ import { useState } from "react";
 import usePopulerMenu from "../../../Hooks/usePopulerMenu";
 
 import OrderTab from "../OrderTab/OrderTab";
+
 const OrderServices = () => {
     const [tabIndex,setTabIndex]=useState(0);
     const [menu] =usePopulerMenu();
+
 
     const BedBugsRemove=menu.filter(item=> item.category==='BedBugs');
     const CleaningWatertank=menu.filter(item=> item.category==='WaterTank')
@@ -23,18 +25,57 @@ const OrderServices = () => {
 
             <Cover img={orderimg} title="Order Sercvices Here"></Cover>
             <Tabs defaultIndex={tabIndex} onSelect={(index) =>setTabIndex(index)}>
-  <TabList>
-   
-    <Tab>BedBugs</Tab>
-    <Tab>WaterTank</Tab>
-    <Tab>WindowCleaning</Tab>
-    <Tab>CarpetClean</Tab>
-    <Tab>kitchencleaning</Tab>
-    <Tab>BathroomCleaning</Tab>
-    <Tab>UpholsteryCleaning</Tab>
-    <Tab>PostRenovation</Tab>
-   
-  </TabList>
+
+              
+            <TabList className="flex flex-wrap justify-between bg-gray-100 p-2">
+                    <Tab className="px-4 py-2 text-sm 
+                    font-medium text-gray-800
+                     bg-white rounded-md cursor-pointer
+                      hover:bg-green-400  
+                      focus:outline-none focus:ring
+                       focus:ring-blue-300">f
+                        BedBugs
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium
+                     text-gray-800 bg-white rounded-md cursor-pointer
+                      hover:bg-green-400 focus:outline-none focus:ring
+                       focus:ring-blue-300">
+                        WaterTank
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium
+                     text-gray-800 bg-white rounded-md cursor-pointer
+                      hover:bg-green-400 focus:outline-none 
+                      focus:ring focus:ring-blue-300">
+                        WindowCleaning
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium
+                     text-gray-800 bg-white rounded-md cursor-pointer
+                      hover:bg-green-400  focus:outline-none focus:ring
+                       focus:ring-blue-300">
+                        CarpetClean
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium
+                     text-gray-800 bg-white rounded-md cursor-pointer
+                      hover:bg-green-400  focus:outline-none focus:ring
+                       focus:ring-blue-300">
+                        kitchencleaning
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium text-gray-800
+                     bg-white rounded-md cursor-pointer hover:bg-green-400
+                       focus:outline-none focus:ring focus:ring-blue-300">
+                        BathroomCleaning
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium text-gray-800
+                     bg-white rounded-md cursor-pointer hover:bg-green-400
+                       focus:outline-none focus:ring focus:ring-blue-300">
+                        UpholsteryCleaning
+                    </Tab>
+                    <Tab className="px-4 py-2 text-sm font-medium text-gray-800
+                     bg-white rounded-md cursor-pointer hover:bg-green-400
+                       focus:outline-none focus:ring focus:ring-blue-300">
+                        PostRenovation
+                    </Tab>
+                </TabList>
 
   <TabPanel>
   <OrderTab items={BedBugsRemove}></OrderTab>

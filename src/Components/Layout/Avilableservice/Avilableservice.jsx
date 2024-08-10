@@ -5,7 +5,7 @@ import Cover from "../../Shared/Cover/Cover";
 import cover1 from"../../../assets/images/homecover.jpg"
 import { Link } from "react-router-dom";
 
-const Avilableservice = () => {
+const Avilableservice = ({items, img}) => {
     const [avilable]=usePopulerMenu();
  
     const avilablemenu=avilable.filter(item=>item.status==='Available');
@@ -27,7 +27,7 @@ const Avilableservice = () => {
    
 </div>
 <div className="flex justify-center mx-auto mt-4">
-<Link to="/orderservice">
+<Link to={`/orderservice/${items}`}>
 <button className="btn btn-outline border-0 border-b-4">Available Service here</button></Link>
 </div>
 
