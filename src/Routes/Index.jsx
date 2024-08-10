@@ -8,6 +8,7 @@ import Adminlayout from "../Components/Layout/AdminLayout.jsx/Adminlayout.jsx";
 import Addservices from "../page/Addservices.jsx";
 import Home from "../page/Home.jsx";
 import Menu from "../page/Menu/Menu/Menu.jsx";
+import OrderServices from "../page/Orderservices/OrderServices/OrderServices.jsx";
 
   const routes = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ import Menu from "../page/Menu/Menu/Menu.jsx";
           path:'menu',
           element:<Menu></Menu>
         },
+        {
+          path:'orderservice',
+          element:<OrderServices></OrderServices>
+       },
         {
          path:'about',
          element:<About></About>

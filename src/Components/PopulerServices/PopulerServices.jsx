@@ -8,6 +8,7 @@ import PopularServiceItemCard from "../Shared/PopularServiceItemCard/PopularServ
 const PopulerServices = () => {
 // create Hook folder using  a custom hook usePopulerMenu 
     const [servicesdata]=usePopulerMenu();
+
     const popularmenu=servicesdata.filter(item=>item.category==='Popular');
 
     return (

@@ -6,6 +6,7 @@ import { IoIosContact } from "react-icons/io";
 import { IoMdLogIn } from "react-icons/io";
 import { FaRegRegistered } from "react-icons/fa6";
 import { MdCleaningServices } from "react-icons/md";
+import { SiCcleaner } from "react-icons/si";
 
 const Navbar = () => {
     return (
@@ -39,6 +40,9 @@ const Navbar = () => {
            <NavLink to="/menu"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <MdCleaningServices></MdCleaningServices>  Our Menu Services </NavLink>
+          <NavLink to="/orderservice"  
+           className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
+          <SiCcleaner className="text-2xl"></SiCcleaner>Order Services </NavLink>
            <NavLink to="/about"  
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <FaBookOpen></FaBookOpen>  About</NavLink>
