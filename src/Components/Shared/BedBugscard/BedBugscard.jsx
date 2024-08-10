@@ -1,5 +1,6 @@
 
 
+
 const BedBugscard = ({bug}) => {
     const { title,image,price,description}=bug;
   
@@ -17,6 +18,7 @@ const BedBugscard = ({bug}) => {
             <p className="text-3xl text-yellow-500 font-serif bg-black">{price}</p>
 
         </div>
+  
       </div>
     </div>
     );

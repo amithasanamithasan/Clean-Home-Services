@@ -3,6 +3,7 @@ import SectionTitle from "../../SectionTitle/SectionTitle";
 import AvilableserviceItemCard from "../../Shared/AvilableserviceItemCard/AvilableserviceItemCard";
 import Cover from "../../Shared/Cover/Cover";
 import cover1 from"../../../assets/images/homecover.jpg"
+import { Link } from "react-router-dom";
 
 const Avilableservice = () => {
     const [avilable]=usePopulerMenu();
@@ -26,7 +27,8 @@ const Avilableservice = () => {
    
 </div>
 <div className="flex justify-center mx-auto mt-4">
-<button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+<Link to="/orderservice">
+<button className="btn btn-outline border-0 border-b-4">Available Service here</button></Link>
 </div>
 
 </section>

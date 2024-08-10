@@ -3,6 +3,7 @@ import SectionTitle from "../../SectionTitle/SectionTitle";
 import Cover from "../../Shared/Cover/Cover";
 import PostrenovatCard from "../../Shared/PostrenovatCard/PostrenovatCard";
 import postimg from"../../../assets/images/PostRenovationServices (7).jpeg"
+import { Link } from "react-router-dom";
 
 const PostRenovationServices = () => {
     const [postrenovat]=usePopulerMenu();
@@ -22,7 +23,9 @@ postrenovatservice.map(post=> <PostrenovatCard key={post._id} post={post}></Post
 }       
 </div>
 <div className="flex justify-center mx-auto mt-4">
+<Link to="/orderservice">
 <button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+</Link>
 </div>
 </section>
     );

@@ -4,6 +4,7 @@ import Cover from "../../Shared/Cover/Cover";
 
 import upholimg from"../../../assets/images/Upholsteryservices(7).jpeg"
 import UpholsteryCard from "../../Shared/Upholsterycard/UpholsteryCard";
+import { Link } from "react-router-dom";
 const Upholsteryservices = () => {
     const [upholstery]=usePopulerMenu();
     const Upholsteryservice=upholstery.filter(item=> item.category==='UpholsteryCleaning');
@@ -22,7 +23,9 @@ Upholsteryservice.map(uphols=> <UpholsteryCard key={uphols._id} uphols={uphols}>
 }       
 </div>
 <div className="flex justify-center mx-auto mt-4">
+<Link to="/orderservice">
 <button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+</Link>
 </div>
 </section>
     );

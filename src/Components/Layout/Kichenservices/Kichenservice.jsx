@@ -3,6 +3,7 @@ import Cover from "../../Shared/Cover/Cover";
 import kichenImg from"../../../assets/images/kichencover.jpg"
 import SectionTitle from "../../SectionTitle/SectionTitle";
 import KichenCard from "../../Shared/KichenCard/KichenCard";
+import { Link } from "react-router-dom";
 
 const Kichenservice = () => {
     const [kichen]=usePopulerMenu();
@@ -22,7 +23,9 @@ KichenServices.map(kichen=> <KichenCard key={kichen._id} kichen={kichen}></Kiche
 }       
 </div>
 <div className="flex justify-center mx-auto mt-4">
+<Link to="/orderservice">
 <button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+</Link>
 </div>
 </section>
     );

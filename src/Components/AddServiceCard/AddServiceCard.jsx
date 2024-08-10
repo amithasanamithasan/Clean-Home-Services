@@ -5,7 +5,10 @@ const AddServiceCard = ({item}) => {
     return (
       
 
-<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div className="max-w-sm  border-2
+ border-x-fuchsia-700 border-t-indigo-700 border-b-indigo-700
+ rounded-lg shadow dark:bg-gray-800 dark:border-gray-700    bg-gradient-to-r
+  from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
     <figure>
         <img className="rounded-t-lg w-full h-[200px]" src={image} alt="" />
     </figure>
@@ -14,8 +17,8 @@ const AddServiceCard = ({item}) => {
         <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
-        <p className= "   font-serif text-2xl text-orange-500 text-right ">TK-{price}</p>
+        <p className="mb-3 font-mono text-1xl text-white dark:text-gray-400">{description}</p>
+        <p className= "   font-serif font-semibold text-3xl text-black text-right ">TK-{price}</p>
         <a href="#" className="inline-flex  items-center px-3 py-3 text-sm font-medium text-center
          text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none
           focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

@@ -3,6 +3,7 @@ import SectionTitle from "../../SectionTitle/SectionTitle";
 import BathroomCard from "../../Shared/BathroomCard/BathroomCard";
 import Cover from "../../Shared/Cover/Cover";
 import bathimg from"../../../assets/images/bathroom (7).jpeg"
+import { Link } from "react-router-dom";
 
 const Bathroomservice = () => {
   
@@ -24,7 +25,9 @@ const Bathroomservice = () => {
     }       
     </div>
     <div className="flex justify-center mx-auto mt-4">
+    <Link to="/orderservice">
 <button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+</Link>
 </div>
     </section>
     );
