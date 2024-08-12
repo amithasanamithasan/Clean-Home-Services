@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+
 
 import { Navigation } from "swiper/modules";
 import 'swiper/css';
@@ -8,16 +7,19 @@ import 'swiper/css/navigation';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
+import useReviews from "../../Hooks/useReviews";
 const Testimonial = () => {
-const [reviewss , setReviews]=useState([]);
-const [loadingdata , setLoadingData]=useState(true);
+    
+    const [reviews]=useReviews();
+// const [reviewss , setReviews]=useState([]);
+// const [loadingdata , setLoadingData]=useState(true);
 
-useEffect(()=>{
-    fetch('reviews.json')
-    .then(res=>res.json())
-    .then(data=> setReviews(data))
-setLoadingData(false);
-},[])
+// useEffect(()=>{
+//     fetch('http://localhost:5000/rating')
+//     .then(res=>res.json())
+//     .then(data=> setReviews(data))
+// setLoadingData(false);
+// },[])
 
 
 
@@ -32,7 +34,7 @@ setLoadingData(false);
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
    
    {
-    reviewss.map(review=> <SwiperSlide key={review._id} >
+    reviews.map(review=> <SwiperSlide key={review._id} >
         <div className=" flex flex-col items-center mx-24 my-16">
         <Rating
       style={{ maxWidth: 180 }}

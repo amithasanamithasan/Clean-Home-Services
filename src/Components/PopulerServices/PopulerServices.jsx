@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import usePopulerMenu from "../../Hooks/usePopulerMenu";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import PopularServiceItemCard from "../Shared/PopularServiceItemCard/PopularServiceItemCard";
@@ -24,6 +25,11 @@ const PopulerServices = () => {
     <PopularServiceItemCard key={service._id} service={service}>
     </PopularServiceItemCard>)
 }       
+</div>
+<div className="flex justify-center mx-auto mt-4">
+<Link to="/orderservice">
+<button className="btn btn-outline border-0 border-b-4">Available Service here</button>
+</Link>
 </div>
 </section>
       

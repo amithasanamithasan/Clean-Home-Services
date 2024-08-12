@@ -33,7 +33,7 @@ const OrderServices = () => {
                      bg-white rounded-md cursor-pointer
                       hover:bg-green-400  
                       focus:outline-none focus:ring
-                       focus:ring-blue-300">f
+                       focus:ring-blue-300">
                         BedBugs
                     </Tab>
                     <Tab className="px-4 py-2 text-sm font-medium

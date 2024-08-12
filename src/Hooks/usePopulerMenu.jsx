@@ -5,7 +5,7 @@ const usePopulerMenu = () => {
     const [servicesdata , setServicesData]=useState([]);
     const [loadingdata , setLoadingData]=useState(true);
         useEffect (() =>{
-            fetch('services.json')
+            fetch('http://localhost:5000/service')
             .then(res=>res.json())
             .then (data=> setServicesData(data)) 
             setLoadingData(false)
