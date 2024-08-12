@@ -2,8 +2,11 @@ import Lottie from "lottie-react";
 import login from "../Animation - 1722449569103.json";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
+  const[showpassword,setShowpassword]=useState(false);
     return (
         <>
         <Helmet>
@@ -38,7 +41,7 @@ const Register = () => {
                <input type="email"  name="email"  placeholder="email" className="input input-bordered"  />
                 <span>This email field is required</span>
              </div>
-             <div className="form-control">
+             {/* <div className="form-control">
                <label className="label">
                  <span className="label-text">Password</span>
                </label>
@@ -50,7 +53,29 @@ const Register = () => {
                <label className="label">
  
                </label>
-             </div>
+             </div> */}
+
+
+               <label  className="  text-lg  text-gray-900 dark:text-white">Your password</label>
+
+
+   {/* terms and condetion checkbox */}
+  <div className="mb-5 text-right relative top-1/3">
+  <input    placeholder="Enter  password" 
+    type={ showpassword ? "text" :"password" }
+    name="password" 
+    id="password"
+     className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+      focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+       dark:border-gray-600 dark:for-gray-400 dark:text-white dark:focus:ring-blue-500
+        dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      <span className="absolute top-1/3 right-0" onClick={()=>setShowpassword(!showpassword)} >
+      {
+        showpassword? <FaEye></FaEye>:<FaEyeSlash></FaEyeSlash>
+      }
+      
+      </span>
+  </div>
              <div className="form-control mt-6">
              <input   className="btn btn-primary" type="submit" value="Sign up"></input>
                
