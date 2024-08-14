@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { LoadCanvasTemplate } from "react-simple-captcha";
+
 
 const Login = () => {
   const[showpassword,setShowpassword]=useState(false);
@@ -23,7 +25,7 @@ const Login = () => {
         <div className="hero p-8  bg-cyan-100 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl  w-[300px] text-center  h-[100px] font-bold text-transparent bg-clip-text  bg-gradient-to-r from-cyan-500 to-purple-700  ">Login now!</h1>
+            <h1 className="text-5xl  w-[300px] text-center  h-[200px] font-bold text-transparent bg-clip-text  bg-gradient-to-r from-cyan-500 to-purple-700  ">Login now!</h1>
             <Lottie  className=" h-[400px]" animationData={ signIn} loop={true}></Lottie>
           </div>
           <div className="card bg-fuchsia-200 w-full   shadow-3xl">
@@ -35,6 +37,7 @@ const Login = () => {
                 <input type="email" name="email" placeholder="Enter email" 
                 className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-4" required />
               </div>
+              
               <label className="label">
                   <span className="label-text font-semibold">Password</span>
                 </label>
@@ -50,11 +53,16 @@ showpassword? <FaEye className="text-4xl p-2"></FaEye>:<FaEyeSlash  className="t
 }
 
 </span>
+
 </div>
-            
+<div className="form-control">
+                <label className="label">
+                <LoadCanvasTemplate />
+                </label>
+                <input  type="text" name="chaptha"  className="input input-bordered" placeholder="Enter type text avobe" />
+                
+              </div>
 
-
-{/* terms and condetion checkbox */}
 
               <div className="form-control mt-6">
              <input className="btn btn-primary" type="submit" value="Login"/>
