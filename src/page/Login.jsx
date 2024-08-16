@@ -1,22 +1,54 @@
 import Lottie from "lottie-react";
 import signIn from"../../Animation - 1721163735130.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { LoadCanvasTemplate } from "react-simple-captcha";
+import { AuthContext } from "../Providers/AuthProviders";
+import Swal from "sweetalert2";
+
 
 
 const Login = () => {
   const[showpassword,setShowpassword]=useState(false);
+  const {singIn} =useContext(AuthContext);
+  const navigate=useNavigate();
+  const location =useLocation();
+  const from=location.state?.from?.pathname || "/";
+console.log('state in the location login page ',location.state)
+  const handelLogin=event=>{
 
-  const handelLogin= event =>{
     event.preventDefault();
-    const form= event.target;
-    const email=form.email.value;
+    const form=event.target;
+    const email =form.email.value;
     const password=form.password.value;
     console.log(email,password);
-  }
+    singIn(email,password)
+    .then(result=>{
+    const user =result.user;
+    console.log(user)
+    Swal.fire({
+      title: "User login successfully",
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      }
+    });
+
+    navigate(from,{replace:true});
+    })
+
+}
     return (
       <>
       <Helmet>
@@ -55,19 +87,14 @@ showpassword? <FaEye className="text-4xl p-2"></FaEye>:<FaEyeSlash  className="t
 </span>
 
 </div>
-<div className="form-control">
-                <label className="label">
-                <LoadCanvasTemplate />
-                </label>
-                <input  type="text" name="chaptha"  className="input input-bordered" placeholder="Enter type text avobe" />
-                
-              </div>
+
 
 
               <div className="form-control mt-6">
              <input className="btn btn-primary" type="submit" value="Login"/>
               </div>
             </form>
+            <div className="divider divider-accent">OR</div>
             <p className="text-center font-bold "> 
               <Link to='/register' >
               <span className="text-green-400 text-1xl hover:text-red-500">

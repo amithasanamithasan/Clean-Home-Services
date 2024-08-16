@@ -7,9 +7,22 @@ import { IoMdLogIn } from "react-icons/io";
 import { FaRegRegistered } from "react-icons/fa6";
 import { MdCleaningServices } from "react-icons/md";
 import { SiCcleaner } from "react-icons/si";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { IoLogOut } from "react-icons/io5";
 
 const Navbar = () => {
-    return (
+  const {user ,logOut}=useContext(AuthContext);
+  
+  const handelLogout=()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>{
+      console.log(error)
+     
+    })
+  }
+      return (
       
         <div className='w-full h-[60px] max-w-[1340px] px-[25px] mx-autonavbar fixed z-10 bg-opacity-40 bg-green-600 mx-auto '>
         <div className="flex-none lg:hidden">
@@ -49,9 +62,21 @@ const Navbar = () => {
            <NavLink to="/contact"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <IoIosContact></IoIosContact>  Contact</NavLink>
-           <NavLink to="/login"
+       
+        {
+          user?<>
+         
+       
+       <button     onClick={handelLogout} className=" btn btn-info btn-lg? hover:btn-warning"> <IoLogOut></IoLogOut>LOG_OUT</button> 
+          </>
+          :
+          <>
+              <NavLink to="/login"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
         <IoMdLogIn></IoMdLogIn>    Login</NavLink>
+          </>
+        }
+
            <NavLink to="/register"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <FaRegRegistered></FaRegRegistered>  Register</NavLink>
