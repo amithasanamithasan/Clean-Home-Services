@@ -16,6 +16,10 @@ const Register = () => {
   const onSubmit = data => {
     console.log (data)
      createuser(data.email ,data.password)
+     .then(result=>{
+      const loggedUser =result.user;
+      console.log(loggedUser);
+     })
 
   }
   return (
