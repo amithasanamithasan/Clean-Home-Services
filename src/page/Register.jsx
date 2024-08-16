@@ -2,11 +2,22 @@ import Lottie from "lottie-react";
 import login from "../Animation - 1722449569103.json";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { AuthContext } from "../Providers/AuthProviders";
+import { useForm } from "react-hook-form";
+
+
 
 const Register = () => {
   const[showpassword,setShowpassword]=useState(false);
+   const{createuser}=useContext(AuthContext);
+  const {register,handleSubmit,formState: { errors },} = useForm();
+  const onSubmit = data => {
+    console.log (data)
+     createuser(data.email ,data.password)
+
+  }
   return (
     <>
       <Helmet>
@@ -25,17 +36,19 @@ const Register = () => {
             <Lottie className="h-[300px] sm:h-[400px]" animationData={login} loop={true}></Lottie>
           </div>
           <div className="card w-full lg:w-1/2 max-w-sm shadow-lg bg-green-200">
-            <form className="card-body">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
                 </label>
                 <input
                   type="text"
+                  {...register("name",{ required: true,maxLength: 20  })} 
                   name="name"
                   placeholder="Enter your name"
                   className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3"
                 />
+                 {errors.name && <span className="text-red-600">This name field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -43,11 +56,12 @@ const Register = () => {
                 </label>
                 <input
                   type="file"
+                  {...register("photoURL",{ required: true  })} 
                   name="photo"
                   placeholder="Upload your photo"
                   className="mt-1 block w-full border input-bordered input-secondary rounded-md shadow-sm p-3"
                 />
-                <span className="text-red-600">Photo is required</span>
+               {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -56,10 +70,11 @@ const Register = () => {
                 <input
                   type="email"
                   name="email"
+                  {...register("email",{ required: true })}
                   placeholder="Enter your email"
                   className="mt-1 block w-full border input-bordered input-warning rounded-md shadow-sm p-3"
                 />
-                <span className="text-red-600">Email is required</span>
+     {errors.email && <span className="text-red-600">This email field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -69,10 +84,21 @@ const Register = () => {
                   <input
                     type={showpassword ? "text" : "password"}
                     name="password"
+                    {...register("password",
+                      { 
+                        required: true,
+                        minLength:6,
+                        maxLength: 10,
+                        pattern:/(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                        })} 
                     placeholder="Enter your password"
                     className="mt-1 block w-full border input-bordered input-accent rounded-md shadow-sm p-3"
                     required
                   />
+                  {errors.password && <span className="text-red-600">This password field is required</span>}
+                {errors.password?.type==="minLength" &&<p className="text-red-600">This password must be 6 characters</p>}
+                {errors.password?.type==="maxLength" &&<p className="text-red-600">This password must be 10 characters</p>}
+                {errors.password?.type==="pattern" &&<p className="text-red-600">This password must have one Uppercase one lower case one number and one spacial charecter </p>}
                   <span
                     className="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer"
                     onClick={() => setShowpassword(!showpassword)}
@@ -86,7 +112,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary w-full">Sign Up</button>
+              <input   className="btn btn-primary" type="submit" value="Sign up"></input>
               </div>
               <div className="divider divider-success">OR</div>
             </form>
