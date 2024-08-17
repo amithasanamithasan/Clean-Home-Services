@@ -1,27 +1,48 @@
 import Lottie from "lottie-react";
 import login from "../Animation - 1722449569103.json";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
- import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
-
-
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const[showpassword,setShowpassword]=useState(false);
-   const{createuser}=useContext(AuthContext);
-  const {register,handleSubmit,formState: { errors },} = useForm();
-  const onSubmit = data => {
-    console.log (data)
-     createuser(data.email ,data.password)
-     .then(result=>{
-      const loggedUser =result.user;
-      console.log(loggedUser);
-     })
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const { createuser, UserupdateProfile } = useContext(AuthContext);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  }
+  const onSubmit = data => {
+    console.log(data);
+    createuser(data.email, data.password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        const photoURL = URL.createObjectURL(data.photo[0]);
+        UserupdateProfile(data.name, photoURL)
+          .then(() => {
+            console.log('User profile info updated');
+            reset();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User Created Successfully",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            navigate('/');
+          })
+          .catch(error => {
+            console.log('Profile update error:', error);
+          });
+      })
+      .catch(error => {
+        console.log('User creation error:', error);
+      });
+  };
+
   return (
     <>
       <Helmet>
@@ -30,11 +51,7 @@ const Register = () => {
       <div className="hero w-full min-h-screen bg-lime-200">
         <div className="hero-content flex-col lg:flex-row-reverse items-center">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <h1
-              className="text-4xl sm:text-5xl w-full sm:w-[400px] text-center 
-              h-[100px] font-bold text-transparent bg-clip-text  
-              bg-gradient-to-r from-green-600 to-violet-500"
-            >
+            <h1 className="text-4xl sm:text-5xl w-full sm:w-[400px] text-center h-[100px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-violet-500">
               Sign Up Now!
             </h1>
             <Lottie className="h-[300px] sm:h-[400px]" animationData={login} loop={true}></Lottie>
@@ -47,12 +64,11 @@ const Register = () => {
                 </label>
                 <input
                   type="text"
-                  {...register("name",{ required: true,maxLength: 20  })} 
-                  name="name"
+                  {...register("name", { required: true, maxLength: 20 })}
                   placeholder="Enter your name"
                   className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3"
                 />
-                 {errors.name && <span className="text-red-600">This name field is required</span>}
+                {errors.name && <span className="text-red-600">This name field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -60,12 +76,10 @@ const Register = () => {
                 </label>
                 <input
                   type="file"
-                  {...register("photoURL",{ required: true  })} 
-                  name="photo"
-                  placeholder="Upload your photo"
+                  {...register("photo", { required: true })}
                   className="mt-1 block w-full border input-bordered input-secondary rounded-md shadow-sm p-3"
                 />
-               {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
+                {errors.photo && <span className="text-red-600">Photo is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -73,12 +87,11 @@ const Register = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
-                  {...register("email",{ required: true })}
+                  {...register("email", { required: true })}
                   placeholder="Enter your email"
                   className="mt-1 block w-full border input-bordered input-warning rounded-md shadow-sm p-3"
                 />
-     {errors.email && <span className="text-red-600">This email field is required</span>}
+                {errors.email && <span className="text-red-600">This email field is required</span>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -86,28 +99,25 @@ const Register = () => {
                 </label>
                 <div className="relative">
                   <input
-                    type={showpassword ? "text" : "password"}
-                    name="password"
-                    {...register("password",
-                      { 
-                        required: true,
-                        minLength:6,
-                        maxLength: 10,
-                        pattern:/(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                        })} 
+                    type={showPassword ? "text" : "password"}
+                    {...register("password", {
+                      required: true,
+                      minLength: 6,
+                      maxLength: 10,
+                      pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                    })}
                     placeholder="Enter your password"
                     className="mt-1 block w-full border input-bordered input-accent rounded-md shadow-sm p-3"
-                    required
                   />
                   {errors.password && <span className="text-red-600">This password field is required</span>}
-                {errors.password?.type==="minLength" &&<p className="text-red-600">This password must be 6 characters</p>}
-                {errors.password?.type==="maxLength" &&<p className="text-red-600">This password must be 10 characters</p>}
-                {errors.password?.type==="pattern" &&<p className="text-red-600">This password must have one Uppercase one lower case one number and one spacial charecter </p>}
+                  {errors.password?.type === "minLength" && <p className="text-red-600">Password must be at least 6 characters</p>}
+                  {errors.password?.type === "maxLength" && <p className="text-red-600">Password must be no more than 10 characters</p>}
+                  {errors.password?.type === "pattern" && <p className="text-red-600">Password must include an uppercase letter, a lowercase letter, a number, and a special character</p>}
                   <span
                     className="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer"
-                    onClick={() => setShowpassword(!showpassword)}
+                    onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showpassword ? (
+                    {showPassword ? (
                       <FaEye className="text-2xl" />
                     ) : (
                       <FaEyeSlash className="text-2xl" />
@@ -116,7 +126,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-              <input   className="btn btn-primary" type="submit" value="Sign up"></input>
+                <input className="btn btn-primary" type="submit" value="Sign up" />
               </div>
               <div className="divider divider-success">OR</div>
             </form>

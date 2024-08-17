@@ -65,7 +65,9 @@ const Navbar = () => {
        
         {
           user?<>
-         
+         <span>
+        {user?.displayName}
+         </span>
        
        <button     onClick={handelLogout} className=" btn btn-info btn-lg? hover:btn-warning"> <IoLogOut></IoLogOut>LOG_OUT</button> 
           </>
