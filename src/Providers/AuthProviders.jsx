@@ -1,7 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import {app} from "../Config/firebase.config";
+import PropTypes from 'prop-types';
+
   export const AuthContext=createContext(null);
+
   const auth = getAuth(app);
 const AuthProviders = ({children}) => {
    
@@ -61,6 +64,9 @@ const UserupdateProfile=(name,photo)=>{
             {children}
         </AuthContext.Provider>
     );
+};
+AuthProviders.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default AuthProviders;

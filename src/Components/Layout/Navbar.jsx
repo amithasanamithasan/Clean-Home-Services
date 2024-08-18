@@ -7,6 +7,7 @@ import { IoMdLogIn } from "react-icons/io";
 import { FaRegRegistered } from "react-icons/fa6";
 import { MdCleaningServices } from "react-icons/md";
 import { SiCcleaner } from "react-icons/si";
+import { MdAddHomeWork } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { IoLogOut } from "react-icons/io5";
@@ -56,6 +57,12 @@ const Navbar = () => {
           <NavLink to="/orderservice"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <SiCcleaner className="text-2xl"></SiCcleaner>Order Services </NavLink>
+          <NavLink to="/"
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm badge badge-secondary"}>
+          <MdAddHomeWork></MdAddHomeWork><button >
+ Add Services
+  <div >+0</div>
+</button> </NavLink>
            <NavLink to="/about"  
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <FaBookOpen></FaBookOpen>  About</NavLink>
@@ -66,7 +73,6 @@ const Navbar = () => {
         {
           user?<>
          <span>
-        {user?.displayName}
          </span>
        
        <button     onClick={handelLogout} className=" btn btn-info btn-lg? hover:btn-warning"> <IoLogOut></IoLogOut>LOG_OUT</button> 
