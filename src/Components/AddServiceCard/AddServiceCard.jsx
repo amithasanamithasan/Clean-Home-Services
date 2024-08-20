@@ -1,14 +1,38 @@
-import useAuth from "../../Hooks/useAuth";
+// import { useContext } from "react";
 
+// import { AuthContext } from "../../Providers/AuthProviders";
 
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth"
+import { useNavigate } from "react-router-dom";
 const AddServiceCard = ({item}) => {
     const { title,image,price,description}=item;
-    const {user}=useAuth();
+ // const {user}=useContext(AuthContext);
+// SEND THE USERS TO THE LOGIN PAGE
+const navigate =useNavigate();
 
-
+const {user}=useAuth();
 
     const handeladdcart=service=>{
-console.log(service ,user.email);
+if(user && user.email){
+    // user jodi email thake  send cart item to the database
+}
+else{
+    Swal.fire({
+        title: "YOU ARE NOT LOGIN ?",
+        text: "Please Log In Add To The Cart!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "PLEASE LOG IN!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+        // SEND THE USERS TO THE LOGIN PAGE
+       navigate('/login');
+        }
+      });
+}
     }
     return (
       

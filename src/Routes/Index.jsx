@@ -26,7 +26,7 @@ import PrivateRoute from "./PrivateRoute.jsx";
         },
         {
           path:'orderservice',
-          element:<PrivateRoute><OrderServices></OrderServices></PrivateRoute>
+          element:<OrderServices></OrderServices>
        },
         {
          path:'about',
