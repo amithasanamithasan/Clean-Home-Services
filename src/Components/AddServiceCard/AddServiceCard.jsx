@@ -4,19 +4,45 @@
 
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth"
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 const AddServiceCard = ({item}) => {
-    const { title,image,price,description}=item;
+    const { title,image,price,description ,_id}=item;
  // const {user}=useContext(AuthContext);
 // SEND THE USERS TO THE LOGIN PAGE
 const navigate =useNavigate();
+const location =useLocation()
 
 const {user}=useAuth();
 
     const handeladdcart=service=>{
-if(user && user.email){
-    // user jodi email thake  send cart item to the database
+// user jodi email thake  send cart item to the database
+if(user && user.email)
+    {
+   const cartItem={
+    menuId: _id,
+    email:user.email,
+    title,
+    image,
+    price,
+
+   }
+   axios.post('http://localhost:5000/carts',cartItem)
+   .then(res=>{
+    console.log(res.data);
+    if (res.data.insertedId){
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${title} added to your cart`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+    }
+   })
 }
+
 else{
     Swal.fire({
         title: "YOU ARE NOT LOGIN ?",
@@ -29,7 +55,7 @@ else{
       }).then((result) => {
         if (result.isConfirmed) {
         // SEND THE USERS TO THE LOGIN PAGE
-       navigate('/login');
+       navigate('/login', { state:{from:location}});
         }
       });
 }

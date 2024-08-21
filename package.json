@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "firebase": "^10.13.0",
     "jsonwebtoken": "^9.0.2",
     "localforage": "^1.10.0",
