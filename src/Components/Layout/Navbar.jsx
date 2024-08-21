@@ -11,9 +11,12 @@ import { MdAddHomeWork } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { IoLogOut } from "react-icons/io5";
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const {user ,logOut}=useContext(AuthContext);
+  // useCart tanstack queriyes
+  const [cart]=useCart();
   
   const handelLogout=()=>{
     logOut()
@@ -61,7 +64,7 @@ const Navbar = () => {
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm badge badge-secondary"}>
           <MdAddHomeWork></MdAddHomeWork><button >
  Add Services
-  <div >+0</div>
+  <div >+{cart.length}</div>
 </button> </NavLink>
            <NavLink to="/about"  
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>

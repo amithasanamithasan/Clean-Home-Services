@@ -5,8 +5,12 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth"
 import { useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+
+
+
 const AddServiceCard = ({item}) => {
+    const axiosSecure =useAxiosSecure();
     const { title,image,price,description ,_id}=item;
  // const {user}=useContext(AuthContext);
 // SEND THE USERS TO THE LOGIN PAGE
@@ -27,7 +31,7 @@ if(user && user.email)
     price,
 
    }
-   axios.post('http://localhost:5000/carts',cartItem)
+   axiosSecure.post('/carts',cartItem)
    .then(res=>{
     console.log(res.data);
     if (res.data.insertedId){

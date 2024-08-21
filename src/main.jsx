@@ -5,7 +5,11 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import routes from './Routes/Index.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
-
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient = new QueryClient()
 // import AuthProviders from './Providers/AuthProviders.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,7 +17,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 
 <AuthProviders>
+<QueryClientProvider client={queryClient}>
 <RouterProvider router={routes}/>
+  </QueryClientProvider>
+
 </AuthProviders>
 
 
