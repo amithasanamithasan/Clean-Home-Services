@@ -12,7 +12,7 @@ import useCart from "../../Hooks/useCart";
 
 const AddServiceCard = ({item}) => {
     const axiosSecure =useAxiosSecure();
-    const { refetch}=useCart();
+ 
     const { title,image,price,description ,_id}=item;
  // const {user}=useContext(AuthContext);
 // SEND THE USERS TO THE LOGIN PAGE
@@ -20,7 +20,7 @@ const navigate =useNavigate();
 const location =useLocation()
 
 const {user}=useAuth();
-
+const[,refetch] = useCart();
     const handeladdcart=()=>{
 // user jodi email thake  send cart item to the database
 if(user && user.email)
@@ -45,9 +45,9 @@ if(user && user.email)
             timer: 1500
           });
         //   refatch cart to update the cart items count
-         
+        refetch();
     }
-    refetch();
+
    })
 }
 
@@ -85,7 +85,7 @@ else{
         </a>
         <p className="mb-3 font-mono text-1xl text-white dark:text-gray-400">{description}</p>
         <p className= "   font-bold text-3xl text-black text-right ">TK-{price}</p>
-        <button onClick= {handeladdcart} href="#" className="inline-flex  items-center px-3 py-3 text-sm font-extrabold rounded-lg text-center
+        <button onClick= { ()=>handeladdcart(item)} href="#" className="inline-flex  items-center px-3 py-3 text-sm font-extrabold rounded-lg text-center
         bg-gradient-to-r from-yellow-400 to-purple-600 hover:from-pink-500 hover:to-orange-500 ">
            ADD_SERVICE
              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

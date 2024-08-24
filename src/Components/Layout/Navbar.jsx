@@ -16,7 +16,7 @@ import useCart from "../../Hooks/useCart";
 const Navbar = () => {
   const {user ,logOut}=useContext(AuthContext);
   // useCart tanstack queriyes
-  const [cart]=useCart();
+  const [cart]=useCart([]);
   
   const handelLogout=()=>{
     logOut()
@@ -60,7 +60,7 @@ const Navbar = () => {
           <NavLink to="/orderservice"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <SiCcleaner className="text-2xl"></SiCcleaner>Order Services </NavLink>
-          <NavLink to="/"
+          <NavLink to="/dashboard/cart"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm badge badge-secondary"}>
           <MdAddHomeWork></MdAddHomeWork><button >
  Add Services

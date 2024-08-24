@@ -9,7 +9,8 @@ import Addservices from "../page/Addservices.jsx";
 import Home from "../page/Home.jsx";
 import Menu from "../page/Menu/Menu/Menu.jsx";
 import OrderServices from "../page/Orderservices/OrderServices/OrderServices.jsx";
-
+import Dashboard from "../Components/Layout/DashBoard/Dashboard.jsx";
+import Cart from"../page/Dashboad/Cart/Cart.jsx"
 
   const routes = createBrowserRouter([
     {
@@ -37,6 +38,17 @@ import OrderServices from "../page/Orderservices/OrderServices/OrderServices.jsx
          element:<Contact></Contact>
       }
     ]
+    },
+    // user dashboard
+    {
+      path:"dashboard",
+      element:<Dashboard></Dashboard>,
+       children:[
+        {
+            path:'cart',
+            element:<Cart></Cart>,
+        },
+       ]
     },
     {
       path:'/login',
