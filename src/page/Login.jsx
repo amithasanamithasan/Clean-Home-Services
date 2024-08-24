@@ -57,7 +57,8 @@ console.log('state in the location login page ',location.state)
         <div className="hero p-8  bg-cyan-100 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl  w-[300px] text-center  h-[200px] font-bold text-transparent bg-clip-text  bg-gradient-to-r from-cyan-500 to-purple-700  ">Login now!</h1>
+            <h1 className="text-5xl  w-[300px] text-center  h-[200px] font-bold text-transparent bg-clip-text  
+            bg-gradient-to-r from-cyan-500 to-purple-700">Login now!</h1>
             <Lottie  className=" h-[400px]" animationData={ signIn} loop={true}></Lottie>
           </div>
           <div className="card bg-fuchsia-200 w-full   shadow-3xl">
