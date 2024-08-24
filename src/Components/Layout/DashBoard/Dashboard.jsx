@@ -9,7 +9,7 @@ const Dashboard = () => {
         <div className="flex">
 
             {/* dashboard side bar */}
-            <div className="w-72 min-h-screen bg-green-300">
+            <div className="w-64 min-h-screen bg-green-300">
                  <p className="text-2xl p-3 font-serif font-bold  
                  text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-lime-400">
                     HOME CLEANING SERVICES BD</p>
@@ -71,7 +71,7 @@ CONTACT</NavLink>
                  </ul>
             </div>
             {/* dashboard content */}
-            <div className="flex-1 p-8">
+            <div className="flex-1 w-full bg-slate-200 py-3 ">
                  <Outlet></Outlet>
             </div>
         </div>
