@@ -1,9 +1,41 @@
+import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Cart = () => {
-    const [cart] = useCart();
-    const TotalPrice = cart.reduce((total, sum) => total + sum.price, 0);
+    const [cart,refetch] = useCart();
+ const axiosSecure=useAxiosSecure();
 
+    const TotalPrice = cart.reduce((total, sum) => total + sum.price, 0);
+const handelcartdeleted= id =>{
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      axiosSecure.delete(`/carts/${id}`)
+        .then((res) => {
+          if (res?.data?.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your file has been deleted.',
+              icon: 'success',
+            });
+          }
+        })
+        .catch((error) => {
+          console.error('Error deleting cart item:', error);
+        });
+    }
+  });
+};
     return (
         <div className="p-4">
             <div className="flex flex-col md:flex-row
@@ -19,17 +51,19 @@ const Cart = () => {
     {/* head */}
     <thead>
       <tr>
-        
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-        <th></th>
+        <th className="font-bold sm:text-2xl md:text-3xl  text-slate-950">SL</th>
+        <th className="font-bold sm:text-2xl md:text-3xl text-emerald-500">IMAGE</th>
+        <th className="font-bold sm:text-2xl md:text-3xl text-amber-400">NAME</th>
+        <th className="font-bold sm:text-2xl md:text-3xl text-pink-600">PRICE</th>
+        <th className="font-bold sm:text-2xl md:text-3xl text-rose-900">ACTION</th>
       </tr>
     </thead>
     <tbody>
      {
-        cart.map(item=> <tr key={item._id} >
-            
+        cart.map((item, index)=> <tr key={item._id} >
+            <th className="font-bold sm:text-2xl md:text-3xl">
+              {index}
+            </th>
             <td>
               <div className="flex items-center gap-3">
                 <div className="avatar">
@@ -40,20 +74,24 @@ const Cart = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Hart Hagerty</div>
-                  <div className="text-sm opacity-50">United States</div>
+                  <div className="font-bold "></div>
+                  <div className="text-sm opacity-50"></div>
                 </div>
               </div>
             </td>
             <td>
-              Zemlak, Daniel and Leannon
-              <br />
-              <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+           
+              <br/>
+              <span className="badge badge-ghost font-semibold  sm:text-2xl md:text-3xl  badge-lg">{item.title}</span>
             </td>
-            <td>Purple</td>
-            <th>
-              <button className="btn btn-ghost btn-xs">details</button>
-            </th>
+            <td className=" font-semibold sm:text-2xl md:text-3xl">TK{item.price}</td>
+            <td className="px-4 py-2 border-b">
+         
+             <button onClick={()=>handelcartdeleted(item._id)} className="bg-red-500 text-white p-2 rounded">
+              <FaTrashAlt />
+             </button>
+              
+            </td>
           </tr>)
      }
      

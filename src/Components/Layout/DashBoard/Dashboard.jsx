@@ -1,10 +1,14 @@
-import { FaAd, FaHome, FaShoppingBag } from "react-icons/fa";
+import { FaAd, FaHome, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
 import { FaBookOpen, FaCalendar, FaList } from "react-icons/fa6";
 import { MdContactPhone, MdOutlineMenuBook } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
+import { RiTeamLine } from "react-icons/ri";
+import useCart from "../../../Hooks/useCart";
+import { GiReceiveMoney } from "react-icons/gi";
 
 
 const Dashboard = () => {
+    const [cart]=useCart()
     return (
         <div className="flex">
 
@@ -22,8 +26,13 @@ const Dashboard = () => {
                    </li>
                    <li>
                     <NavLink to ="/dashboard/reservation">                  
-                   <FaCalendar className="text-2xl"></FaCalendar>
-                   Reservation</NavLink>
+                   <RiTeamLine className="text-2xl"></RiTeamLine>
+                   Employee List</NavLink>
+                   </li>
+                   <li>
+                    <NavLink to ="/dashboard/cart">                  
+                   <FaShoppingCart className="text-2xl"></FaShoppingCart>
+                   My Cart ({cart.length})</NavLink>
                    </li>
                    <li>
                     <NavLink to ="/dashboard/review">                  
@@ -37,7 +46,7 @@ const Dashboard = () => {
                    </li>
                    <li>
                     <NavLink to ="/dashboard/paymentHistory">                  
-                   <FaList className="text-2xl"></FaList>
+                    <GiReceiveMoney className="text-2xl" > </GiReceiveMoney>
                 Real Payment History</NavLink>
                    </li>
                    <div className="divider"></div>
