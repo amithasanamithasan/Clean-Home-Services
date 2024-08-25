@@ -21,7 +21,7 @@ const ContactLogo = () => {
                     />
                   </svg>
                   <a href="amit-35-1773@diu.edu.bd" className="text-black  flex text-sm ml-3">
-                    <MdOutlineMailOutline className="text-4xl text-black  " ></MdOutlineMailOutline><strong className="text-2xl">amit-35-1773@diu.edu.bd</strong>
+                    <MdOutlineMailOutline className="text-4xl text-black"></MdOutlineMailOutline><strong className="text-2xl">amit-35-1773@diu.edu.bd</strong>
                   </a>
                 </li>
                 <li className="flex items-center">
@@ -38,7 +38,8 @@ const ContactLogo = () => {
                       
                     </svg>
                     <a href="tel:+0088 01797522144" className="text-black  flex text-sm ml-3">
-                    <FaPhone className="text-3xl text-black  "></ FaPhone >  <strong className="text-2xl">+01797522144</strong> 
+                    <FaPhone className="text-3xl text-black  "></ FaPhone > 
+                     <strong className="text-2xl">+01797522144 OR +01993790088</strong> 
                     </a>
                   </li>
                   <li className="flex items-center">

@@ -7,8 +7,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import userAxiosPublic from "../Hooks/userAxiosPublic";
 
 const Register = () => {
+  const axiosPublic=userAxiosPublic();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const { createuser, UserupdateProfile } = useContext(AuthContext);
@@ -23,8 +25,16 @@ const Register = () => {
         const photoURL = URL.createObjectURL(data.photo[0]);
         UserupdateProfile(data.name, photoURL)
           .then(() => {
-            console.log('User profile info updated');
-            reset();
+            const userInfo={
+              name:data.name,
+              email:data.email,
+              photo:photoURL,
+             }
+             axiosPublic.post('/users',userInfo)
+             .then(res=>{
+              if(res.data.insertedId){
+                console.log('user added to the database');
+                reset();
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -33,6 +43,10 @@ const Register = () => {
               timer: 1500
             });
             navigate('/');
+              }
+
+             })
+          
           })
           .catch(error => {
             console.log('Profile update error:', error);

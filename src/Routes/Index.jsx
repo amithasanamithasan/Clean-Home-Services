@@ -11,7 +11,7 @@ import Menu from "../page/Menu/Menu/Menu.jsx";
 import OrderServices from "../page/Orderservices/OrderServices/OrderServices.jsx";
 import Dashboard from "../Components/Layout/DashBoard/Dashboard.jsx";
 import Cart from"../page/Dashboad/Cart/Cart.jsx"
-
+import PrivateRoute from"../Routes/PrivateRoute.jsx"
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -46,7 +46,7 @@ import Cart from"../page/Dashboad/Cart/Cart.jsx"
        children:[
         {
             path:'cart',
-            element:<Cart></Cart>,
+            element:<PrivateRoute><Cart></Cart></PrivateRoute>,
         },
        ]
     },
