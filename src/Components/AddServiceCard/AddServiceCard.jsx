@@ -71,7 +71,7 @@ else{
     return (
       
 
-<div className="max-w-sm  border-2
+<div className="max-w-sm m-3  border
  border-x-fuchsia-700 border-t-indigo-700 border-b-indigo-700
  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700    bg-gradient-to-r
   from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
@@ -85,7 +85,7 @@ else{
         </a>
         <p className="mb-3 font-mono text-1xl text-white dark:text-gray-400">{description}</p>
         <p className= "   font-bold text-3xl text-black text-right ">TK-{price}</p>
-        <button onClick= { ()=>handeladdcart(item)} href="#" className="inline-flex  items-center px-3 py-3 text-sm font-extrabold rounded-lg text-center
+        <button onClick= { ()=>handeladdcart(item)} href="#" className="inline-flex border-4  items-center px-3 py-3 text-sm font-extrabold rounded-lg text-center
         bg-gradient-to-r from-yellow-400 to-purple-600 hover:from-pink-500 hover:to-orange-500 ">
            ADD_SERVICE
              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

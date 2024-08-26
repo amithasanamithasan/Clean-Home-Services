@@ -14,7 +14,7 @@ const PopulerServices = () => {
 
     return (
       <section  >
-        <SectionTitle subHeading="Our Populer Items"
+        <SectionTitle subHeading="OUR POPULER SERVICES"
         heading="HOME CLEANING SERVICES">
 
         </SectionTitle>
