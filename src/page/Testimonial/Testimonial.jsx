@@ -1,54 +1,40 @@
 
-
-import { Navigation } from "swiper/modules";
 import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
+
 import 'swiper/css/navigation';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import useReviews from "../../Hooks/useReviews";
+
 const Testimonial = () => {
-    
-    const [reviews]=useReviews();
-// const [reviewss , setReviews]=useState([]);
-// const [loadingdata , setLoadingData]=useState(true);
-
-// useEffect(()=>{
-//     fetch('http://localhost:5000/rating')
-//     .then(res=>res.json())
-//     .then(data=> setReviews(data))
-// setLoadingData(false);
-// },[])
-
-
+    const [reviews] = useReviews();
 
     return (
-        <section className="my-20">
-    
-    <SectionTitle subHeading="What Our Client Say"
-        heading="Testimonials">
-
-        </SectionTitle>
-
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-   
-   {
-    reviews.map(review=> <SwiperSlide key={review._id} >
-        <div className=" flex flex-col items-center mx-24 my-16">
-        <Rating
-      style={{ maxWidth: 180 }}
-      value={review.rating}
-      readOnly
-    />
-            <p className="py-8">{review.details}</p>
-            <img  className="rounded-full w-40 h-40"src={review.image} alt="" />
-            <h3 className="text-2xl text-orange-400">{review.name}</h3>
-        </div>
-    </SwiperSlide>)
-   }
-      </Swiper>
-       </section>
+        <section>
+            <SectionTitle subHeading="What Our Clients Say" heading="Testimonials" />
+         
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-2 p-2">
+                { 
+                    reviews.map(review => (
+                        <div key={review._id}>
+                            <div className=" w-full max-w-sm mb-4 bg-white border border-orange-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                <div className="flex flex-col items-center pb-10">
+                                    <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={review.image} alt={review.name} />
+                                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{review.name}</h5>
+                                    <span className="text-sm font-bold text-gray-500 dark:text-gray-400">{review.details}</span>
+                                    <div className="flex mt-4 md:mt-6">
+                                        <Rating style={{ maxWidth: 180 }} value={review.rating} readOnly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            
+        </section>
     );
 };
 

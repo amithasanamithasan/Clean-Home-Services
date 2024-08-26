@@ -1,5 +1,5 @@
 import { FaAd, FaHome, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
-import { FaBookOpen, FaCalendar, FaList } from "react-icons/fa6";
+import { FaBookOpen, FaList } from "react-icons/fa6";
 import { MdContactPhone, MdOutlineMenuBook } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import { RiTeamLine } from "react-icons/ri";
