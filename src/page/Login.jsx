@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import SocialLogin from "../Components/Sociallogin/SocialLogin";
 
 
 
@@ -96,6 +97,7 @@ showpassword? <FaEye className="text-4xl p-2"></FaEye>:<FaEyeSlash  className="t
               </div>
             </form>
             <div className="divider divider-accent">OR</div>
+            <SocialLogin></SocialLogin>
             <p className="text-center font-bold "> 
               <Link to='/register' >
               <span className="text-green-400 text-1xl hover:text-red-500">

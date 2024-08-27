@@ -8,6 +8,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import userAxiosPublic from "../Hooks/userAxiosPublic";
+import SocialLogin from "../Components/Sociallogin/SocialLogin";
 
 const Register = () => {
   const axiosPublic=userAxiosPublic();
@@ -144,6 +145,7 @@ const Register = () => {
               </div>
               <div className="divider divider-success">OR</div>
             </form>
+            <SocialLogin></SocialLogin>
             <p className="text-center text-green-500 font-bold text-lg p-5">
               <small>
                 Already registered?{" "}
