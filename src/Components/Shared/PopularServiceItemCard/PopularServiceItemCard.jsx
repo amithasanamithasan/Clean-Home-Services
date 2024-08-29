@@ -4,7 +4,7 @@ const PopularServiceItemCard = ({service}) => {
     const {title,image,description}=service;
     return (
     <div className="card  bg-gradient-to-r from-green-300 to-slate-100     
-    border border-x-gray-950 border-y-zinc-950  shadow-xl">
+    border border-x-green-600 border-y-green-600  shadow-xl">
   <figure>
     <img className="w-full h-[200px]"
       src={image} alt="Clean" />

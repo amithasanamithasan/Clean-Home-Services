@@ -13,9 +13,9 @@ const Banner = () => {
           <div className="absolute  rounded-xl flex items-center left-0 
           top-0 bottom-0 bg-gradient-to-r from-[#55b4cb] to-[rgb(21,21,21,0)] ">
      
-     <div className='  space-y-7 text-white  w-1/2  font-bold '>
-        <h1 className='text-5xl  text-green-600'> Affordable Price For Deep Cleaning  Servicing</h1>
-        <p className=' font-bold  text-green-100 '>There are many variations of passages of available, 
+     <div className='  space-y-7 text-white  w-1/2  font-bold  m-10 '>
+        <h1 className='lg:text-5xl md:text:3xl  text-green-600'> Affordable Price For Deep Cleaning  Servicing</h1>
+        <p className=' font-bold  text-green-100 md:text-2xl lg:text-3xl'>There are many variations of passages of available, 
             but the majority have suffered alteration in some form </p>
 <div className=' py-10  flex'>
 <button className="btn btn-active btn-success mr-4">Discover More</button>
