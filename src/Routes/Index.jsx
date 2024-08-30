@@ -12,6 +12,7 @@ import OrderServices from "../page/Orderservices/OrderServices/OrderServices.jsx
 import Dashboard from "../Components/Layout/DashBoard/Dashboard.jsx";
 import Cart from"../page/Dashboad/Cart/Cart.jsx"
 import PrivateRoute from"../Routes/PrivateRoute.jsx"
+import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -48,6 +49,10 @@ import PrivateRoute from"../Routes/PrivateRoute.jsx"
             path:'cart',
             element:<PrivateRoute><Cart></Cart></PrivateRoute>,
         },
+        {
+          path:'/dashboard/users',
+          element:<AllUsers></AllUsers>
+        },
        ]
     },
     {
@@ -66,6 +71,7 @@ import PrivateRoute from"../Routes/PrivateRoute.jsx"
         path:'addservice',
         element:<Addservices></Addservices>
       },
+   
     ]
     }
   ]);
