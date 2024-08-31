@@ -15,6 +15,23 @@ const AllUsers = () => {
       return res.data;
     }
   });
+ const handelMakeadmin= user=>{
+  axiosSecure.patch(`/users/admin/${user._id}`)
+  .then(res=>{
+    console.log(res.data);
+    if(res.data.modifiedCount > 0 ){
+      refetch()
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `${user.name} is an Admin Now`,
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    
+  })
+ }
  const  handelUserdelete=user=>{
   Swal.fire({
     title: "Are you sure?",
@@ -28,7 +45,7 @@ const AllUsers = () => {
     if (result.isConfirmed) {
       axiosSecure.delete(`/users/${user._id}`)
       .then(res=>{
-        if(res.data.deletedCount > 0)
+        if(res.data.deletedCount > 0 )
           refetch()
         Swal.fire({
           title: "Deleted!",
@@ -67,9 +84,10 @@ const AllUsers = () => {
                 <td className="px-4 py-2 border-b font-bold">{user.name}</td>
                 <td className="px-4 py-2 border-b font-bold">{user.email}</td>
                 <td className="px-4 py-2 border-b">
-                  <button onClick={()=>handelAdmin(user)} className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
+                  {/* user er role ta admin hoi tahole take 'Admin' lekha dekhabo UI te na hole button thakbe    */}
+                 {user.role === 'admin'? 'Admin': <button onClick={()=>handelMakeadmin(user)} className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
                     <FaUsers className="text-2xl" />
-                  </button>
+                  </button>}
                 </td>
                 <td className="px-4 py-2 border-b">
                   <button onClick={()=>handelUserdelete(user)} className="bg-red-500 text-white p-2 rounded flex items-center justify-center">
