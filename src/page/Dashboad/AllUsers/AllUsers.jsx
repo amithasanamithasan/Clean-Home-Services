@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
   // Using axiosSecure to ensure only admin can load the user data
@@ -14,6 +15,26 @@ const AllUsers = () => {
       return res.data;
     }
   });
+ const  handelUserdelete=user=>{
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+    }
+  });
+
+ }
 
   return (
     <div className="p-4">
@@ -45,7 +66,7 @@ const AllUsers = () => {
                   </button>
                 </td>
                 <td className="px-4 py-2 border-b">
-                  <button className="bg-red-500 text-white p-2 rounded flex items-center justify-center">
+                  <button onClick={()=>handelUserdelete(user)} className="bg-red-500 text-white p-2 rounded flex items-center justify-center">
                     <FaTrashAlt className="text-1xl" />
                   </button>
                 </td>
