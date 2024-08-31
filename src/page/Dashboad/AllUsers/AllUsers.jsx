@@ -8,7 +8,7 @@ const AllUsers = () => {
    // axiossecure use korbo karon users data ta je kw load korte parbe na shudhu matro admin use korte parbe
   const axiosSecure = useAxiosSecure();
   
-  const { data: users = [] } = useQuery({
+  const { data: users = [] ,refetch} = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
       const res = await axiosSecure.get('/users');
@@ -26,11 +26,17 @@ const AllUsers = () => {
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire({
-        title: "Deleted!",
-        text: "Your file has been deleted.",
-        icon: "success"
-      });
+      axiosSecure.delete(`/users/${user._id}`)
+      .then(res=>{
+        if(res.data.deletedCount > 0)
+          refetch()
+        Swal.fire({
+          title: "Deleted!",
+          text: "User has been deleted.",
+          icon: "success"
+        });
+      })
+      
     }
   });
 
