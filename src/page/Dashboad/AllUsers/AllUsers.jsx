@@ -67,7 +67,7 @@ const AllUsers = () => {
                 <td className="px-4 py-2 border-b font-bold">{user.name}</td>
                 <td className="px-4 py-2 border-b font-bold">{user.email}</td>
                 <td className="px-4 py-2 border-b">
-                  <button className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
+                  <button onClick={()=>handelAdmin(user)} className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
                     <FaUsers className="text-2xl" />
                   </button>
                 </td>
