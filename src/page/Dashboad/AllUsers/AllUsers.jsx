@@ -11,7 +11,15 @@ const AllUsers = () => {
   const { data: users = [] ,refetch} = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await axiosSecure.get('/users');
+      const res = await axiosSecure.get('/users')
+      //   ,{
+      //   // headers kintu akta object tr vitor akta name ace r akta tahke value
+      //   headers:{
+      //     // Bearer mane ai token ta Bearer kot ti ce application e request korti ce Beare korte ce kw akjon 
+      //     // dynamic hiseba babohar kora lagbe
+      //     authorization:`Bearer ${localStorage.getItem('access-token')}`
+      //   }
+      // });
       return res.data;
     }
   });
