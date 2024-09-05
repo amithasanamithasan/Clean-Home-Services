@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import {app} from "../Config/firebase.config";
 import PropTypes from 'prop-types';
+import userAxiosPublic from "../Hooks/userAxiosPublic";
 
   export const AuthContext=createContext(null);
   //in social log in with google
@@ -11,7 +12,7 @@ const AuthProviders = ({children}) => {
    
     const [user, setUser]= useState(null);
     const [loading ,setLoading]=useState(true);
-  
+   const axiosPublic =userAxiosPublic()
 // social login google auth using
 const GoogleAuth=()=>{
     setLoading(true);
@@ -36,8 +37,26 @@ const singIn= (email,password)=>{
 // sideeffect er joto kaj ace ta useeffect er modhhe krte hoi
 useEffect(()=>{
 const unsubscribe = onAuthStateChanged(auth,(currentuser)=>{
-    setLoading(false);
-     setUser(currentuser);
+
+    setUser(currentuser)
+
+  if(currentuser){
+// get token and store client
+const userinfo={email:currentuser.email}
+    axiosPublic.post('/jwt',userinfo)
+    .then(res=>{
+    //  console.log(res.data);
+    if(res.data.token){
+        localStorage.setItem('access-token',res.data.token)
+    }
+    })
+  }
+// user ta jodi null hoia jie ba na powa jie tahole localstorage thake remove kore dibo
+  else{
+localStorage.removeItem('access-token')
+  }
+    // setLoading(false);
+  
 });
 return () =>{
     return unsubscribe();
