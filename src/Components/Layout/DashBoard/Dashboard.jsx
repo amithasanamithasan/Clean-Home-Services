@@ -9,10 +9,11 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 
 import { BsFillHouseAddFill } from "react-icons/bs";
 import { PiUsersFourFill } from "react-icons/pi";
+import useAdmin from "../../../Hooks/useAdmin";
 const Dashboard = () => {
     const [cart]=useCart();
     // get admin value from the  database
-    const isAdmin=true;
+    const [isAdmin]=useAdmin();
     return (
         <div className="flex">
 
