@@ -39,7 +39,7 @@ useEffect(()=>{
 const unsubscribe = onAuthStateChanged(auth,(currentuser)=>{
 
     setUser(currentuser)
-
+    setLoading(false);
   if(currentuser){
 // get token and store client
 const userinfo={email:currentuser.email}
@@ -55,7 +55,7 @@ const userinfo={email:currentuser.email}
   else{
 localStorage.removeItem('access-token')
   }
-    // setLoading(false);
+  
   
 });
 return () =>{

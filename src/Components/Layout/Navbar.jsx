@@ -48,27 +48,33 @@ const Navbar = () => {
           <img src={logo} alt="logo"  className="w-[60px] h-[50px] rounded-xl  relative " /> 
       
         </div>
+        
         <div className="hidden flex-none lg:block">
           <div className=" flex gap-3 ">
             {/* Navbar menu content here */}
             <NavLink to="/"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm outline"}>
             <IoHomeOutline></IoHomeOutline> Home </NavLink>
+
            <NavLink to="/menu"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <MdCleaningServices></MdCleaningServices>  Our Menu Services </NavLink>
+
           <NavLink to="/orderservice"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <SiCcleaner className="text-2xl"></SiCcleaner>Order Services </NavLink>
+
           <NavLink to="/dashboard/cart"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm badge badge-secondary"}>
           <MdAddHomeWork></MdAddHomeWork><button >
  Add Services
   <div >+{cart.length}</div>
 </button> </NavLink>
+
            <NavLink to="/about"  
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <FaBookOpen></FaBookOpen>  About</NavLink>
+
            <NavLink to="/contact"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
           <IoIosContact></IoIosContact>  Contact</NavLink>
