@@ -43,7 +43,7 @@ import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
     // user dashboard
     {
       path:"dashboard",
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
        children:[
         {
             path:'cart',
