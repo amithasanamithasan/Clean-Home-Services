@@ -61,7 +61,7 @@ localStorage.removeItem('access-token')
 return () =>{
     return unsubscribe();
 }
-},[])
+},[axiosPublic])
 
 // logOut
 const logOut=()=>{
