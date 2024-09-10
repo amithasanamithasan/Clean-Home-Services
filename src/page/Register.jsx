@@ -9,6 +9,11 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import userAxiosPublic from "../Hooks/userAxiosPublic";
 import SocialLogin from "../Components/Sociallogin/SocialLogin";
+import { MdPassword } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
+import { UserOutlined } from '@ant-design/icons';
+
+import { Input } from 'antd';
 
 const Register = () => {
   const axiosPublic=userAxiosPublic();
@@ -64,7 +69,9 @@ const Register = () => {
         <title>HOME SERVICES CLEAN | Sign_Up</title>
       </Helmet>
       <div className="hero w-full min-h-screen bg-lime-200">
+        
         <div className="hero-content flex-col lg:flex-row-reverse items-center">
+
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl w-full sm:w-[400px] text-center h-[100px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-violet-500">
               Sign Up Now!
@@ -72,16 +79,18 @@ const Register = () => {
             <Lottie className="h-[300px] sm:h-[400px]" animationData={login} loop={true}></Lottie>
           </div>
           <div className="card w-full lg:w-1/2 max-w-sm shadow-lg bg-green-200">
+
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
                 </label>
-                <input
+                <Input  prefix={<UserOutlined />}
                   type="text"
                   {...register("name", { required: true, maxLength: 20 })}
                   placeholder="Enter your name"
-                  className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3"
+                  className="mt-1 block] w-full border input-bordered input-info rounded-md shadow-sm p-3"
                 />
                 {errors.name && <span className="text-red-600">This name field is required</span>}
               </div>
@@ -90,9 +99,10 @@ const Register = () => {
                   <span className="label-text font-semibold">Photo URL</span>
                 </label>
                 <input
+              
                   type="file"
                   {...register("photo", { required: true })}
-                  className="mt-1 block w-full border input-bordered input-secondary rounded-md shadow-sm p-3"
+                  className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3"
                 />
                 {errors.photo && <span className="text-red-600">Photo is required</span>}
               </div>
@@ -100,11 +110,12 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text font-semibold">Email</span>
                 </label>
-                <input
+                <Input   
+                prefix={ <MdOutlineEmail  />}
                   type="email"
                   {...register("email", { required: true })}
                   placeholder="Enter your email"
-                  className="mt-1 block w-full border input-bordered input-warning rounded-md shadow-sm p-3"
+                  className="mt-0 block w-full  border input-bordered input-warning rounded-md shadow-sm  "
                 />
                 {errors.email && <span className="text-red-600">This email field is required</span>}
               </div>
@@ -113,15 +124,20 @@ const Register = () => {
                   <span className="label-text font-semibold">Password</span>
                 </label>
                 <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
+                  <input 
+
+                   type={showPassword ? "text" : "password"}
+                  
+                   
                     {...register("password", {
                       required: true,
                       minLength: 6,
                       maxLength: 10,
                       pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                     })}
+                  
                     placeholder="Enter your password"
+              
                     className="mt-1 block w-full border input-bordered input-accent rounded-md shadow-sm p-3"
                   />
                   {errors.password && <span className="text-red-600">This password field is required</span>}

@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import SocialLogin from "../Components/Sociallogin/SocialLogin";
-
+import { MdOutlineEmail } from "react-icons/md";
 
 
 const Login = () => {
@@ -17,6 +17,7 @@ const Login = () => {
   const location =useLocation();
   const from=location.state?.from?.pathname || "/";
 console.log('state in the location login page ',location.state)
+
   const handelLogin=event=>{
 
     event.preventDefault();
@@ -68,8 +69,9 @@ console.log('state in the location login page ',location.state)
                 <label className="label">
                   <span className="label-text font-semibold">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="Enter email" 
-                className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-4" required />
+            
+                <input  prefix={<MdOutlineEmail  className="text-2xl"/>}  type="email" name="email" placeholder="Enter Your Email"     
+                className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-4" required  />  
               </div>
               
               <label className="label">
