@@ -8,13 +8,21 @@ import { FaRegRegistered } from "react-icons/fa6";
 import { MdCleaningServices } from "react-icons/md";
 import { SiCcleaner } from "react-icons/si";
 import { MdAddHomeWork } from "react-icons/md";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { IoLogOut } from "react-icons/io5";
 import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
 const [theme , setTheme]=useState('light');
+
+useEffect(()=>{
+
+  localStorage.setItem( 'theme',theme)
+const localTheme = localStorage.getItem('theme')
+document.querySelector('html').setAttribute('data-theme',localTheme)
+
+} , [theme])
 
 const handelToggle = e =>{
   console.log(e.target.value);
