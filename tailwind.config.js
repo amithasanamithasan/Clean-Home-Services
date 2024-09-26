@@ -11,9 +11,12 @@ export default {
     require('daisyui'),
   ],
   // daisyUI config (optional - here are the default values)
-  daisyui: {
-    themes:['emerald'], 
+  // daisyui: {
+  //   themes:['emerald'], 
 
+  // },
+  daisyui: {
+    themes: ["light", "coffee"],
   },
 }
 
