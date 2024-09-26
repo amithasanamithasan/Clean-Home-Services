@@ -71,13 +71,6 @@ const Navbar = () => {
   <div >+{cart.length}</div>
 </button> </NavLink>
 
-           <NavLink to="/about"  
-           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
-          <FaBookOpen></FaBookOpen>  About</NavLink>
-
-           <NavLink to="/contact"
-           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
-          <IoIosContact></IoIosContact>  Contact</NavLink>
        
         {
           user?<>
@@ -99,6 +92,31 @@ const Navbar = () => {
           <FaRegRegistered></FaRegRegistered>  Register</NavLink>
           </div>
         </div>
+        <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+     
+      <li>
+        <details>
+          <summary className="font-semibold ">ABOUT_US</summary>
+          <ul className="bg-base-100 rounded-t-none p-2">
+            <li>
+            <NavLink to="/about"  
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+          <FaBookOpen></FaBookOpen>  About</NavLink>
+
+            </li>
+            <li>
+            <NavLink to="/contact"
+           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
+          <IoIosContact></IoIosContact>  Contact</NavLink>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+
+  
         </div>
     );
 };
