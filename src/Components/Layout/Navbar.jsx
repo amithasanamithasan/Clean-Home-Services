@@ -8,12 +8,24 @@ import { FaRegRegistered } from "react-icons/fa6";
 import { MdCleaningServices } from "react-icons/md";
 import { SiCcleaner } from "react-icons/si";
 import { MdAddHomeWork } from "react-icons/md";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { IoLogOut } from "react-icons/io5";
 import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
+const [theme , setTheme]=useState('light');
+
+const handelToggle = e =>{
+  console.log(e.target.value);
+ if(e.target.checked){
+  setTheme('coffee')
+ }else{
+  setTheme('light')
+ }
+ 
+}
+console.log(theme)
   const {user ,logOut}=useContext(AuthContext);
   // useCart tanstack queriyes
   const [cart]=useCart([]);
@@ -117,9 +129,10 @@ const Navbar = () => {
   </div>
 
 <label className="grid cursor-pointer place-items-center">
-<input
+<input 
+ onChange={handelToggle}
   type="checkbox"
-  value="synthwave"
+
   className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
 <svg
   className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
