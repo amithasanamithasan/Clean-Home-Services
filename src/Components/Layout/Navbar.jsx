@@ -25,7 +25,7 @@ document.querySelector('html').setAttribute('data-theme',localTheme)
 } , [theme])
 
 const handelToggle = e =>{
-  console.log(e.target.value);
+  // console.log(e.target.value);
  if(e.target.checked){
   setTheme('coffee')
  }else{
@@ -33,7 +33,7 @@ const handelToggle = e =>{
  }
  
 }
-console.log(theme)
+// console.log(theme)
   const {user ,logOut}=useContext(AuthContext);
   // useCart tanstack queriyes
   const [cart]=useCart([]);

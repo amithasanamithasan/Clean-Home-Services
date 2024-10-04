@@ -91,14 +91,18 @@ const AllUsers = () => {
                 <td className="px-4 py-2 border-b font-bold">{index + 1}</td>
                 <td className="px-4 py-2 border-b font-bold">{user.name}</td>
                 <td className="px-4 py-2 border-b font-bold">{user.email}</td>
+                
                 <td className="px-4 py-2 border-b">
                   {/* user er role ta admin hoi tahole take 'Admin' lekha dekhabo UI te na hole button thakbe    */}
-                 {user.role === 'admin'? 'Admin': <button onClick={()=>handelMakeadmin(user)} className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
+                 {user.role === 'admin'? 'Admin': <button onClick={()=>handelMakeadmin(user)} 
+                 className="bg-orange-500 text-white p-2 rounded flex items-center justify-center">
                     <FaUsers className="text-2xl" />
                   </button>}
                 </td>
+
                 <td className="px-4 py-2 border-b">
-                  <button onClick={()=>handelUserdelete(user)} className="bg-red-500 text-white p-2 rounded flex items-center justify-center">
+                  <button onClick={()=>handelUserdelete(user)} 
+                  className="bg-red-500 text-white p-2 rounded flex items-center justify-center">
                     <FaTrashAlt className="text-1xl" />
                   </button>
                 </td>

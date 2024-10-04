@@ -67,27 +67,28 @@ const handelcartdeleted= id =>{
             <td>
               <div className="flex items-center gap-3">
                 <div className="avatar">
-                  <div className="mask mask-squircle h-20 w-20">
-                    <img
+                  <div className="mask mask-squircle  bg-indigo-300 object-cover h-40 w-60">
+                    <img 
                       src={item.image}
                       alt="Avatar Tailwind CSS Component" />
                   </div>
                 </div>
                 <div>
                   <div className="font-bold "></div>
-                  <div className="text-sm opacity-50"></div>
+                  <div className="text-sm opacity-60"></div>
                 </div>
               </div>
             </td>
             <td>
            
               <br/>
-              <span className="badge badge-ghost font-semibold  sm:text-2xl md:text-3xl  badge-lg">{item.title}</span>
+              <span className=" font-semibold  sm:text-2xl md:text-3xl  badge-lg">{item.title}</span>
             </td>
             <td className=" font-semibold sm:text-2xl md:text-3xl">TK{item.price}</td>
             <td className="px-4 py-2 border-b">
          
-             <button onClick={()=>handelcartdeleted(item._id)} className="bg-red-500 text-white p-2 rounded">
+             <button onClick={()=>handelcartdeleted(item._id)} 
+             className="bg-red-500 text-white p-2 rounded">
               <FaTrashAlt />
              </button>
               
