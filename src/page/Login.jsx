@@ -65,27 +65,31 @@ console.log('state in the location login page ',location.state)
           </div>
           <div className="card bg-fuchsia-200 w-full   shadow-3xl">
             <form onSubmit={handelLogin} className="card-body w-full h-[400px]">
+              
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Email</span>
                 </label>
             
-                <input  prefix={<MdOutlineEmail  className="text-2xl"/>}  type="email" name="email" placeholder="Enter Your Email"     
+                <input    type="email" name="email" placeholder="Enter Your Email"     
                 className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-4" required  />  
               </div>
+              
               
               <label className="label">
                   <span className="label-text font-semibold">Password</span>
                 </label>
 <div className=" form-control mb-5 text-right relative ">
-<input    placeholder="Enter  password" 
+<input    placeholder="Enter Password ******" 
 type={ showpassword ? "text" :"password" }
 name="password" 
 id="password"
-className=" mt-1 block w-full border input-bordered input-accent rounded-md shadow-sm p-4" required />
+className=" mt-1 block w-full border input-bordered input-accent 
+rounded-md shadow-sm p-4" required />
 <span className="absolute top-1/3 right-0" onClick={()=>setShowpassword(!showpassword)} >
 {
-showpassword? <FaEye className="text-4xl p-2"></FaEye>:<FaEyeSlash  className="text-4xl p-2"></FaEyeSlash>
+showpassword? <FaEye className="text-4xl p-2"></FaEye>:<FaEyeSlash  
+className="text-4xl p-2"></FaEyeSlash>
 }
 
 </span>

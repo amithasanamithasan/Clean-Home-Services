@@ -2,10 +2,55 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import axios from "axios";
+import userAxiosPublic from "../../../Hooks/userAxiosPublic";
 
 const Cart = () => {
+
     const [cart,refetch] = useCart();
+   
  const axiosSecure=useAxiosSecure();
+ 
+ const onsubmit = (cart) => {
+  const orderData = cart.map(item => ({
+    productId: item._id,  // Use the actual product ID from the cart item
+    title: item.title,
+    price: item.price,
+    image: item.image,
+    currency: 'BDT',  // Add currency and other fields required by the backend
+  }));
+
+  fetch('http://localhost:5000/order', {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(orderData)  // Send the cart items as order data
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.url) {
+      window.location.replace(data.url); // Redirect to SSLCommerz URL
+    } else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'No payment URL returned.',
+        icon: 'error',
+      });
+    }
+  })
+  .catch(error => {
+    console.error('Error placing order:', error);
+    Swal.fire({
+      title: 'Error!',
+      text: 'There was an issue placing your order.',
+      icon: 'error',
+    });
+  });
+};
+
+ 
+
+
+
 
     const TotalPrice = cart.reduce((total, sum) => total + sum.price, 0);
 const handelcartdeleted= id =>{
@@ -44,7 +89,7 @@ const handelcartdeleted= id =>{
             border-y-fuchsia-500">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-0">Items: {cart.length}</h2>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-0">Total Price: ${TotalPrice}</h2>
-                <button className="btn btn-primary mt-2 md:mt-0">Pay</button>
+                <button  onClick={() => onsubmit(cart)} className="btn btn-primary mt-2 md:mt-0">Pay</button>
             </div>
             <div className="overflow-x-auto">
   <table className="table">

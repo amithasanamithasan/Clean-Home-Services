@@ -73,7 +73,9 @@ const Register = () => {
         <div className="hero-content flex-col lg:flex-row-reverse items-center">
 
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl w-full sm:w-[400px] text-center h-[100px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-violet-500">
+            <h1 className="text-4xl sm:text-5xl w-full sm:w-[400px] text-center 
+            h-[100px] font-bold text-transparent bg-clip-text bg-gradient-to-r
+             from-green-600 to-violet-500">
               Sign Up Now!
             </h1>
             <Lottie className="h-[300px] sm:h-[400px]" animationData={login} loop={true}></Lottie>

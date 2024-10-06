@@ -9,8 +9,8 @@ const Banner = () => {
     return (
         <div className="carousel w-full h-[600px] object-cover    ">
  <div id="slide1" className="carousel-item relative w-full  object-cover ">
-          <img src={img1} className="w-full rounded-xl  " />
-          <div className="absolute  rounded-xl flex items-center left-0 
+          <img src={img1} className="w-full rounded  " />
+          <div className="absolute  rounded flex items-center left-0 
           top-0 bottom-0 bg-gradient-to-r from-[#55b4cb] to-[rgb(21,21,21,0)] ">
      
      <div className='  space-y-7 text-white  w-1/2  font-bold  m-10 '>

@@ -13,6 +13,7 @@ import Dashboard from "../Components/Layout/DashBoard/Dashboard.jsx";
 import Cart from"../page/Dashboad/Cart/Cart.jsx"
 import PrivateRoute from"../Routes/PrivateRoute.jsx"
 import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
+import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -53,7 +54,13 @@ import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
           path:'/dashboard/users',
           element:<AllUsers></AllUsers>
         },
+      
+       
        ]
+    },
+    {
+      path:`/payment/success/:tranId`,
+      element:<PaymentSuccessfull></PaymentSuccessfull>,
     },
     {
       path:'/login',
