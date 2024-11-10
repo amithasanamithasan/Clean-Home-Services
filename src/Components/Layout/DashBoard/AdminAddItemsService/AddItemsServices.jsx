@@ -2,11 +2,24 @@
 import SectionTitle from '../../../SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import { MdOutlineAutorenew } from "react-icons/md";
+import userAxiosPublic from '../../../../Hooks/userAxiosPublic';
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const AddItemsServices = () => {
     const { register, handleSubmit } = useForm();
+    const axiosPublic = userAxiosPublic();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log(data);
+const imageFile= {image: data.image[0]}
+        //image upload to imagbb and then get an url
+const res =await axiosPublic.post (image_hosting_api,imageFile ,{
+    headers:{
+        "content-type": "multipart/form-data"
+    },
+});
+ console.log(res.data)
     };
 
     return (
@@ -29,19 +42,19 @@ const AddItemsServices = () => {
                     <div className="flex flex-col ">
                         <label className="text-lg font-semibold ">Category Services</label>
                         <select
-                            {...register("category", { required: true })}
+                          defaultValue="default"  {...register("category", { required: true })}
                             className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-blue-500"
                         >
-                            <option value="">Select a category</option>
-                            <option value="salad">BedBugs</option>
-                            <option value="pizza">WaterTank</option>
-                            <option value="soup">WindowCleaning</option>
-                            <option value="dessert">CarpetClean</option>
-                            <option value="drink">KitchenCleaning</option>
-                            <option value="drink">BathroomCleaning</option>
-                            <option value="drink">UpholsteryCleaning</option>
-                            <option value="drink">KitchenCleaning</option>
-                            <option value="drink">PostRenovation</option>
+                            <option disabled value="default">Select a category</option>
+                            <option value="BedBugs">BedBugs</option>
+                            <option value="WaterTank">WaterTank</option>
+                            <option value="WindowCleaning">WindowCleaning</option>
+                            <option value="CarpetClean">CarpetClean</option>
+                            <option value="KitchenCleaning">KitchenCleaning</option>
+                            <option value="BathroomCleaning">BathroomCleaning</option>
+                            <option value="UpholsteryCleaning">UpholsteryCleaning</option>
+                            <option value="KitchenCleaning">KitchenCleaning</option>
+                            <option value="PostRenovation">PostRenovation</option>
                         </select>
                     </div>
 
