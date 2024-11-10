@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaUtensils } from 'react-icons/fa';
+
 import SectionTitle from '../../../SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import { MdOutlineAutorenew } from "react-icons/md";
@@ -34,11 +33,15 @@ const AddItemsServices = () => {
                             className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-blue-500"
                         >
                             <option value="">Select a category</option>
-                            <option value="salad">Salad</option>
-                            <option value="pizza">Pizza</option>
-                            <option value="soup">Soup</option>
-                            <option value="dessert">Dessert</option>
-                            <option value="drink">Drink</option>
+                            <option value="salad">BedBugs</option>
+                            <option value="pizza">WaterTank</option>
+                            <option value="soup">WindowCleaning</option>
+                            <option value="dessert">CarpetClean</option>
+                            <option value="drink">KitchenCleaning</option>
+                            <option value="drink">BathroomCleaning</option>
+                            <option value="drink">UpholsteryCleaning</option>
+                            <option value="drink">KitchenCleaning</option>
+                            <option value="drink">PostRenovation</option>
                         </select>
                     </div>
 
