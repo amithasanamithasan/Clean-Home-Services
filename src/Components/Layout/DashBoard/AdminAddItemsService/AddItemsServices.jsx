@@ -1,25 +1,56 @@
-
 import SectionTitle from '../../../SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import { MdOutlineAutorenew } from "react-icons/md";
 import userAxiosPublic from '../../../../Hooks/userAxiosPublic';
+import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2'
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
 const AddItemsServices = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const axiosPublic = userAxiosPublic();
+    const axiosSecure = useAxiosSecure();
 
     const onSubmit = async (data) => {
-        console.log(data);
-const imageFile= {image: data.image[0]}
-        //image upload to imagbb and then get an url
-const res =await axiosPublic.post (image_hosting_api,imageFile ,{
-    headers:{
-        "content-type": "multipart/form-data"
-    },
-});
- console.log(res.data)
+        try {
+            console.log(data);
+
+            const imageFile = { image: data.image[0] };
+            const res = await axiosPublic.post(image_hosting_api, imageFile, {
+                headers: {
+                    "content-type": "multipart/form-data"
+                },
+            });
+
+            if (res.data.success) {
+                const serviceItem = {
+                    name: data.name,
+                    category: data.category,
+                    price: parseFloat(data.price),
+                    service: data.service,
+                    image: res.data.data.display_url
+                };
+
+                const serviceresponse = await axiosSecure.post('/service', serviceItem);
+                console.log(serviceresponse.data);
+
+                if (serviceresponse.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${data.name}New Service Item has been saved`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                }
+            }
+        } catch (error) {
+            toast.error('An error occurred. Please try again.');
+            console.error(error);
+        }
     };
 
     return (
@@ -34,16 +65,17 @@ const res =await axiosPublic.post (image_hosting_api,imageFile ,{
                         name="name"
                         {...register("name", { required: true })}
                         className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                        placeholder="Enter the recipe name"
+                        placeholder="Enter the service name"
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-                    <div className="flex flex-col ">
-                        <label className="text-lg font-semibold ">Category Services</label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex flex-col">
+                        <label className="text-lg font-semibold">Category</label>
                         <select
-                          defaultValue="default"  {...register("category", { required: true })}
-                            className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none  focus:border-blue-500"
+                            defaultValue="default" 
+                            {...register("category", { required: true })}
+                            className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                         >
                             <option disabled value="default">Select a category</option>
                             <option value="BedBugs">BedBugs</option>
@@ -53,7 +85,6 @@ const res =await axiosPublic.post (image_hosting_api,imageFile ,{
                             <option value="KitchenCleaning">KitchenCleaning</option>
                             <option value="BathroomCleaning">BathroomCleaning</option>
                             <option value="UpholsteryCleaning">UpholsteryCleaning</option>
-                            <option value="KitchenCleaning">KitchenCleaning</option>
                             <option value="PostRenovation">PostRenovation</option>
                         </select>
                     </div>
@@ -73,10 +104,10 @@ const res =await axiosPublic.post (image_hosting_api,imageFile ,{
                 <div className="flex flex-col">
                     <label className="text-lg font-semibold">Service Details</label>
                     <textarea
-                        {...register("recipe", { required: true })}
+                        {...register("service", { required: true })}
                         rows="4"
                         className="mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                        placeholder="Write details about the recipe"
+                        placeholder="Write details about the Service"
                     />
                 </div>
 
@@ -91,14 +122,15 @@ const res =await axiosPublic.post (image_hosting_api,imageFile ,{
 
                 <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 p-3 
-                    bg-gradient-to-r from-teal-500 to-green-600 text-white rounded-md
-                     hover:from-green-600 hover:to-teal-500 transition duration-200"
+                    className="w-full flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-teal-500 to-green-600 text-white rounded-md hover:from-green-600 hover:to-teal-500 transition duration-200"
                 >
-                   <MdOutlineAutorenew className='text-2xl'/>
+                    <MdOutlineAutorenew className="text-2xl" />
                     Add new service
                 </button>
             </form>
+
+        
+      
         </div>
     );
 };

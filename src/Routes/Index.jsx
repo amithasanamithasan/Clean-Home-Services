@@ -56,7 +56,8 @@ import AdminRoute from "./AdminRoute.jsx";
     // Admin only Routes
     {
    path:'addItems',
-   element:<AdminRoute><AddItemsServices></AddItemsServices></AdminRoute> 
+  //  element:<AddItemsServices></AddItemsServices>
+    element:<AdminRoute><AddItemsServices></AddItemsServices></AdminRoute> 
     },
         {
           path:'/dashboard/users',
