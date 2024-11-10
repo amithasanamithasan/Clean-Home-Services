@@ -14,6 +14,9 @@ import Cart from"../page/Dashboad/Cart/Cart.jsx"
 import PrivateRoute from"../Routes/PrivateRoute.jsx"
 import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
 import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
+import AddItemsServices from "../Components/Layout/DashBoard/AdminAddItemsService/AddItemsServices.jsx";
+import AdminRoute from "./AdminRoute.jsx";
+
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -41,7 +44,7 @@ import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
       }
     ]
     },
-    // user dashboard
+    //Normal user dashboard
     {
       path:"dashboard",
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
@@ -50,9 +53,14 @@ import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
             path:'cart',
             element:<PrivateRoute><Cart></Cart></PrivateRoute>,
         },
+    // Admin only Routes
+    {
+   path:'addItems',
+   element:<AdminRoute><AddItemsServices></AddItemsServices></AdminRoute> 
+    },
         {
           path:'/dashboard/users',
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
       
        

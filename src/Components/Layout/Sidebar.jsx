@@ -47,15 +47,6 @@ const Sidebar = () => {
   <div >+{cart.length}</div>
 </button> </NavLink>
 
-           <NavLink to="/about"
-             className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
-             <FaBookOpen></FaBookOpen>About</NavLink>
-
-           <NavLink to="/contact"
-           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
-           <IoIosContact></IoIosContact>Contact</NavLink>
-
-
            {
           user?<>
          <span>
@@ -71,9 +62,7 @@ const Sidebar = () => {
         <IoMdLogIn></IoMdLogIn>    Login</NavLink>
           </>
         }
-           <NavLink to="/login"
-           className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>
-         <IoMdLogIn></IoMdLogIn>Login</NavLink>
+        
          
            <NavLink to="/register"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm"}>

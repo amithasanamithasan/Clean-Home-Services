@@ -14,9 +14,14 @@ const AuthProviders = ({children}) => {
     const [loading ,setLoading]=useState(true);
    const axiosPublic =userAxiosPublic()
 // social login google auth using
-const GoogleAuth=()=>{
+const GoogleAuth= async()=>{
     setLoading(true);
-    return signInWithPopup(auth,googleProvider);
+    try {
+        return await signInWithPopup(auth, googleProvider);
+    } catch (error) {
+        console.error("Google sign-in error:", error);
+        setLoading(false);
+    }
 }
 
       // createUser
