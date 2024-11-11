@@ -68,7 +68,7 @@ import AdminUpdateItem from "../Components/Layout/DashBoard/AdminUpdateItem/Admi
     {
       path:'updateItems/:id',
       element:<AdminRoute><AdminUpdateItem></AdminUpdateItem></AdminRoute>,
-      loader:({params})=> fetch(`http://localhost:5000/service${params.id} `)
+      loader:({params})=>fetch(`http://localhost:5000/service/${params.id} `)
     },
         {
           path:'/dashboard/users',
