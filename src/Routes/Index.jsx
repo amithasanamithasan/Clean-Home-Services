@@ -16,6 +16,7 @@ import AllUsers from "../page/Dashboad/AllUsers/AllUsers.jsx";
 import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
 import AddItemsServices from "../Components/Layout/DashBoard/AdminAddItemsService/AddItemsServices.jsx";
 import AdminRoute from "./AdminRoute.jsx";
+import AdminManageItems from "../Components/Layout/DashBoard/AdminManageItems/AdminManageItems.jsx";
 
   const routes = createBrowserRouter([
     {
@@ -56,8 +57,11 @@ import AdminRoute from "./AdminRoute.jsx";
     // Admin only Routes
     {
    path:'addItems',
-  //  element:<AddItemsServices></AddItemsServices>
     element:<AdminRoute><AddItemsServices></AddItemsServices></AdminRoute> 
+    },
+    {
+      path:'manageItems',
+       element:<AdminManageItems></AdminManageItems>
     },
         {
           path:'/dashboard/users',
