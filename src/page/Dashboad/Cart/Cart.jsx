@@ -89,7 +89,11 @@ const handelcartdeleted= id =>{
             border-y-fuchsia-500">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-0">Items: {cart.length}</h2>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-0">Total Price: ${TotalPrice}</h2>
-                <button  onClick={() => onsubmit(cart)} className="btn btn-primary mt-2 md:mt-0">Pay</button>
+            {cart.length ?     
+            <button  onClick={() => onsubmit(cart)} className="btn btn-primary mt-2 md:mt-0">Pay</button>
+          :
+          <button disabled  onClick={() => onsubmit(cart)} className="btn btn-primary mt-2 md:mt-0">Pay</button>
+            }
             </div>
             <div className="overflow-x-auto">
   <table className="table">
