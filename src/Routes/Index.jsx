@@ -17,6 +17,8 @@ import PaymentSuccessfull from "../page/Payment/PaymentSuccessfull.jsx";
 import AddItemsServices from "../Components/Layout/DashBoard/AdminAddItemsService/AddItemsServices.jsx";
 import AdminRoute from "./AdminRoute.jsx";
 import AdminManageItems from "../Components/Layout/DashBoard/AdminManageItems/AdminManageItems.jsx";
+import { element } from "prop-types";
+import AdminUpdateItem from "../Components/Layout/DashBoard/AdminUpdateItem/AdminUpdateItem.jsx";
 
   const routes = createBrowserRouter([
     {
@@ -61,7 +63,12 @@ import AdminManageItems from "../Components/Layout/DashBoard/AdminManageItems/Ad
     },
     {
       path:'manageItems',
-       element:<AdminManageItems></AdminManageItems>
+       element:<AdminRoute><AdminManageItems></AdminManageItems></AdminRoute>
+    },
+    {
+      path:'updateItems/:id',
+      element:<AdminRoute><AdminUpdateItem></AdminUpdateItem></AdminRoute>,
+      loader:({params})=> fetch(`http://localhost:5000/service${params.id} `)
     },
         {
           path:'/dashboard/users',

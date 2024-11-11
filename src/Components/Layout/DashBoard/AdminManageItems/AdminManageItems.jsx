@@ -75,12 +75,12 @@ const AdminManageItems = () => {
                              <td className="px-4 py-2 border-b  text-white">{item.title} {item.name}</td>
                              <td className="px-4 py-2 border-b text-white">${item.price}</td>
                              <td className="px-4 py-2 border-b">
-                                {/* updateItems admin  */}
-                                <Link to={''}> 
-                                <button  className="bg-yellow-500 text-white p-2 rounded">
-                                <FaEdit />
-                             </button>
-                             </Link>
+                               {/* updateItems admin  */}
+                               <Link to={`/dashboard/updateItems/${item._id}`}> 
+                               <button  className="bg-yellow-500 text-white p-2 rounded">
+                               <FaEdit />
+                            </button>
+                            </Link>
  
                              </td>
                              <td className="px-4 py-2 border-b">
