@@ -2,14 +2,42 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import usePopulerMenu from "../../../../Hooks/usePopulerMenu";
 import SectionTitle from "../../../SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const AdminManageItems = () => {
-    const [servicesdata , refetch]= usePopulerMenu();
+    const [servicesdata , refetch]=  usePopulerMenu();
 
-const handelAdminmanageDelete=(item)=>{
-
-}
+    const axiosSecure = useAxiosSecure();
+    const handelAdminmanageDelete = async (item) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: `${item.name || item.title} has been deleted`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+              
+                const res = await axiosSecure.delete(`/service/${item._id}`);
+                refetch();
+                if (res.data.deletedCount > 0) {
+                
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${item.name || item.title} has been deleted`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+           
+                }
+            }
+        });
+    };
 
     return (
         < div>
@@ -44,7 +72,7 @@ const handelAdminmanageDelete=(item)=>{
                                  <img src={item.image} alt={item.name} 
                                  className="w-24 h-20 object-cover avatar rounded-md mx-auto" />
                              </td>
-                             <td className="px-4 py-2 border-b  text-white">{item.title}{item.name}</td>
+                             <td className="px-4 py-2 border-b  text-white">{item.title} {item.name}</td>
                              <td className="px-4 py-2 border-b text-white">${item.price}</td>
                              <td className="px-4 py-2 border-b">
                                 {/* updateItems admin  */}
