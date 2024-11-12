@@ -52,13 +52,15 @@ const userinfo={email:currentuser.email}
     .then(res=>{
     //  console.log(res.data);
     if(res.data.token){
-        localStorage.setItem('access-token',res.data.token)
+        localStorage.setItem('access-token',res.data.token);
+        setLoading(false);
     }
     })
   }
 // user ta jodi null hoia jie ba na powa jie tahole localstorage thake remove kore dibo
   else{
-localStorage.removeItem('access-token')
+localStorage.removeItem('access-token');
+setLoading(false);
   }
   
   

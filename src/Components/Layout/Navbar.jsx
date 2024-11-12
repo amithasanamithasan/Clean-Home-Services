@@ -12,6 +12,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { IoLogOut } from "react-icons/io5";
 import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
 const [theme , setTheme]=useState('light');
@@ -37,6 +38,9 @@ const handelToggle = e =>{
   const {user ,logOut}=useContext(AuthContext);
   // useCart tanstack queriyes
   const [cart]=useCart([]);
+
+  // admin hook 
+  const [isAdmin]=useAdmin();
   
   const handelLogout=()=>{
     logOut()
@@ -83,7 +87,12 @@ const handelToggle = e =>{
           <NavLink to="/orderservice"  
            className={({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm "}>
           <SiCcleaner className="text-2xl"></SiCcleaner>Order Services </NavLink>
-
+          {
+            user && isAdmin && <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
+          }
+           {
+            user && !isAdmin && <NavLink to="/dashboard/userHome">Dashboard</NavLink>
+          }
           <NavLink to="/dashboard/cart"
            className={ ({ isActive })=>isActive?"btn btn-primary btn-sm":"btn btn-ghost btn-sm badge badge-secondary"}>
           <MdAddHomeWork></MdAddHomeWork><button >
