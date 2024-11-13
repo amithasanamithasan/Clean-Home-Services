@@ -8,11 +8,12 @@ import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import SocialLogin from "../Components/Sociallogin/SocialLogin";
 import { MdOutlineEmail } from "react-icons/md";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 
 const Login = () => {
   const[showpassword,setShowpassword]=useState(false);
-  const {singIn} =useContext(AuthContext);
+  const {singIn , loading, setLoading} =useContext(AuthContext);
   const navigate=useNavigate();
   const location =useLocation();
   const from=location.state?.from?.pathname || "/";
@@ -98,9 +99,15 @@ className="text-4xl p-2"></FaEyeSlash>
 
 
 
-              <div className="form-control mt-6">
-             <input className="btn btn-primary" type="submit" value="Login"/>
-              </div>
+            <div>
+            <button
+             disabled={loading}
+              type='submit'
+              className='bg-rose-500 w-full rounded-md py-3 text-white'
+            >
+             {loading? <TbFidgetSpinner className='animate-spin m-auto'/>: 'LogIn'}
+            </button>
+          </div>
             </form>
             <div className="divider divider-accent">OR</div>
             <SocialLogin></SocialLogin>

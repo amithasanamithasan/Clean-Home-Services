@@ -12,9 +12,9 @@ const PopularServiceItemCard = ({ service }) => {
       return text.slice(0, maxLength) + '...';
   };
     return (
-        <div className="card bg-gradient-to-r from-green-300 to-slate-100 border border-x-green-600 border-y-green-600 shadow-xl">
+        <div className="card group bg-gradient-to-r from-green-300 to-slate-100 border border-x-green-600 border-y-green-600 shadow-xl">
             <figure>
-                <img className="w-full h-[200px]" src={image} alt={title} />
+                <img className="w-full h-[200px] transition-transform duration-300 group-hover:scale-110" src={image} alt={title} />
             </figure>
             <div className="card-body">
                 <h2 className="font-serif rounded-full text-xl md:text-2xl font-extrabold text-red-500 bg-green-500 uppercase text-center">
@@ -37,7 +37,9 @@ const PopularServiceItemCard = ({ service }) => {
                 </div>
             </div>
         </div>
-    );
+
+
+)
 };
 
 export default PopularServiceItemCard;

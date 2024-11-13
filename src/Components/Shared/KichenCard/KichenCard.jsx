@@ -3,9 +3,9 @@
 const KichenCard = ({kichen}) => {
     const { title,image,price,description}=kichen;
     return (
-        <div className="card  border-2 border-x-blue-600 border-y-fuchsia-500  shadow-xl bg-gradient-to-r from-violet-500 to-fuchsia-500">
+        <div className="card group  border-2 border-x-blue-600 border-y-fuchsia-500  shadow-xl bg-gradient-to-r from-violet-500 to-fuchsia-500">
       <figure>
-        <img className="w-full h-[200px]"
+        <img className="w-full h-[200px] transition-transform duration-300 group-hover:scale-110"
           src={image} alt="Clean" />
       </figure>
       <div className="card-body  ">

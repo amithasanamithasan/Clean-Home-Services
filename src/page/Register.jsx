@@ -1,6 +1,5 @@
 import Lottie from "lottie-react";
 import login from "../Animation - 1722449569103.json";
-import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
@@ -9,21 +8,17 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import userAxiosPublic from "../Hooks/userAxiosPublic";
 import SocialLogin from "../Components/Sociallogin/SocialLogin";
-import { MdPassword } from "react-icons/md";
-import { MdOutlineEmail } from "react-icons/md";
-import { UserOutlined } from '@ant-design/icons';
-
-import { Input } from 'antd';
+import { TbFidgetSpinner } from "react-icons/tb";
 
 const Register = () => {
   const axiosPublic=userAxiosPublic();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const { createuser, UserupdateProfile } = useContext(AuthContext);
+  const { createuser, UserupdateProfile ,loading} = useContext(AuthContext);
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmit = data => {
-    console.log(data);
+
     createuser(data.email, data.password)
       .then(result => {
         const loggedUser = result.user;
@@ -65,9 +60,7 @@ const Register = () => {
 
   return (
     <>
-      <Helmet>
-        <title>HOME SERVICES CLEAN | Sign_Up</title>
-      </Helmet>
+     
       <div className="hero w-full min-h-screen bg-lime-200">
         
         <div className="hero-content flex-col lg:flex-row-reverse items-center">
@@ -88,11 +81,11 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
                 </label>
-                <Input  prefix={<UserOutlined />}
+                <input
                   type="text"
                   {...register("name", { required: true, maxLength: 20 })}
                   placeholder="Enter your name"
-                  className="mt-1 block] w-full border input-bordered input-info rounded-md shadow-sm p-3"
+                  className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3"
                 />
                 {errors.name && <span className="text-red-600">This name field is required</span>}
               </div>
@@ -112,12 +105,12 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text font-semibold">Email</span>
                 </label>
-                <Input   
-                prefix={ <MdOutlineEmail  />}
+                <input 
+           
                   type="email"
                   {...register("email", { required: true })}
                   placeholder="Enter your email"
-                  className="mt-0 block w-full  border input-bordered input-warning rounded-md shadow-sm  "
+                  className="mt-1 block w-full border input-bordered input-info rounded-md shadow-sm p-3  "
                 />
                 {errors.email && <span className="text-red-600">This email field is required</span>}
               </div>
@@ -158,9 +151,15 @@ const Register = () => {
                   </span>
                 </div>
               </div>
-              <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Sign up" />
-              </div>
+              <div>
+            <button
+             disabled={loading}
+              type='submit'
+              className='bg-rose-500 w-full rounded-md py-3 text-white'
+            >
+             {loading? <TbFidgetSpinner className='animate-spin m-auto'/>: 'Sign_UP'}
+            </button>
+          </div>
               <div className="divider divider-success">OR</div>
             </form>
             <SocialLogin></SocialLogin>
