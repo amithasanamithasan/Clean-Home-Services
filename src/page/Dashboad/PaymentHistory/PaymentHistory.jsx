@@ -7,10 +7,10 @@ const PaymentHistory = () => {
     const axiosSecure = useAxiosSecure();
 
     const { data: orders = [] } = useQuery({
-        queryKey: ['order', user?.email],
+        queryKey: ['orders', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get('/order');
-            console.log("Fetched Data:", res.data); // Log response to verify structure
+            // console.log("Fetched Data:", res.data); // Log response to verify structure
             return res.data;
         }
     });
